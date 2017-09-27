@@ -1,0 +1,101 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}pyecharts{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <link rel="icon" href="{{ url_for('static', filename='fav.ico')}}" type="image/x-coin">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}" type="text/css">
+    <title>Proudly presented by ECharts</title>
+	{% for jsfile_name in script_list %}
+        <script src="static/echarts/{{jsfile_name}}.js"></script>
+    {% endfor %}
+{% endblock %}
+
+{% block navbar %}
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">pyecharts</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">首页</a> </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">直角坐标系
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url_for('bar') }}">柱状图</a> </li>
+                                <li><a href="{{ url_for('boxplot') }}">箱线图</a> </li>
+                                <li><a href="{{ url_for('line') }}">折线图</a> </li>
+                                <li><a href="{{ url_for('kline') }}">K 线图</a> </li>
+                                <li><a href="{{ url_for('scatter') }}">散点图</a> </li>
+                                <li><a href="{{ url_for('effectscatter') }}">动态散点图</a> </li>
+                                <li><a href="{{ url_for('heatmap') }}">热力图</a> </li>
+                                <li><a href="{{ url_for('sankey') }}">桑基图</a> </li>
+                                <li><a href="{{ url_for('themeriver') }}">主题河流图</a> </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">其他坐标系
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url_for('polar') }}">极坐标系</a> </li>
+                                <li><a href="{{ url_for('parallel') }}">平行坐标系</a> </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">3D图
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url_for('bar3d') }}">3D 柱状图</a> </li>
+                                <li><a href="{{ url_for('scatter3d') }}">3D 散点图</a> </li>
+                                <li><a href="{{ url_for('line3d') }}">3D 折线图</a> </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">地图
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url_for('geo') }}">地理坐标系</a> </li>
+                                <li><a href="{{ url_for('map') }}">地图</a> </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">其他
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url_for('pie') }}">饼图</a> </li>
+                                <li><a href="{{ url_for('graph') }}">关系图</a> </li>
+                                <li><a href="{{ url_for('funnel') }}">漏斗图</a> </li>
+                                <li><a href="{{ url_for('gauge') }}">仪表盘</a> </li>
+                                <li><a href="{{ url_for('liquid') }}">水球图</a> </li>
+                                <li><a href="{{ url_for('wordcloud') }}">词云图</a> </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户自定义
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url_for('grid') }}">Grid 类</a> </li>
+                                <li><a href="{{ url_for('overlap') }}">Overlap 类</a> </li>
+                                <li><a href="{{ url_for('timeline') }}">Timeline 类</a> </li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="my-charts">
+        {{ myechart|safe }}
+    </div>
+{% endblock %}
