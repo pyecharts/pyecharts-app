@@ -7,11 +7,11 @@ def effectscatter_charts():
     
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [25, 20, 15, 10, 60, 33]
-    chart1 = EffectScatter("动态散点图示例", width=WIDTH, height=HEIGHT)
+    chart1 = EffectScatter("动态散点图-默认", width=WIDTH, height=HEIGHT)
     chart1.add("effectScatter", v1, v2)
     page.add(chart1)
     
-    chart2 = EffectScatter("动态散点图各种图形示例", width=WIDTH, height=HEIGHT)
+    chart2 = EffectScatter("动态散点图-自定义", width=WIDTH, height=HEIGHT)
     chart2.add("", [10], [10], symbol_size=20, effect_scale=3.5,
                effect_period=3, symbol="pin")
     chart2.add("", [20], [20], symbol_size=12, effect_scale=4.5,

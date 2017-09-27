@@ -1,10 +1,11 @@
 from pyecharts import Boxplot, Page
+from .constants import WIDTH, HEIGHT
 
 
 def boxplot_charts():
     page = Page()
 
-    chart1 = Boxplot("单图例箱形图")
+    chart1 = Boxplot("箱形图-单图例", width=WIDTH, height=HEIGHT)
     x_axis = ['expr1', 'expr2', 'expr3', 'expr4', 'expr5']
     y_axis = [
         [850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,
@@ -22,7 +23,7 @@ def boxplot_charts():
     chart1.add("boxplot", x_axis, _yaxis)
     page.add(chart1)
 
-    chart2 = Boxplot("多图例箱形图")
+    chart2 = Boxplot("箱形图-多图例", width=WIDTH, height=HEIGHT)
     x_axis = ['expr1', 'expr2']
     y_axis1 = [
         [850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,

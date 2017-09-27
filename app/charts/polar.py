@@ -9,26 +9,26 @@ def polar_charts():
     page = Page()
 
     data = [(i, random.randint(1, 100)) for i in range(101)]
-    chart1 = Polar("极坐标系-散点图示例", width=WIDTH, height=HEIGHT)
+    chart1 = Polar("极坐标系-散点图", width=WIDTH, height=HEIGHT)
     chart1.add("", data, boundary_gap=False, type='scatter',
                is_splitline_show=False, is_axisline_show=True)
     page.add(chart1)
 
     data_1 = [(10, random.randint(1, 100)) for i in range(300)]
     data_2 = [(11, random.randint(1, 100)) for i in range(300)]
-    chart2 = Polar("极坐标系-散点图示例", width=WIDTH, height=HEIGHT)
+    chart2 = Polar("极坐标系-散点图", width=WIDTH, height=HEIGHT)
     chart2.add("", data_1, type='scatter')
     chart2.add("", data_2, type='scatter')
     page.add(chart2)
 
     data = [(i, random.randint(1, 100)) for i in range(10)]
-    chart3 = Polar("极坐标系-动态散点图示例", width=WIDTH, height=HEIGHT)
+    chart3 = Polar("极坐标系-动态散点图", width=WIDTH, height=HEIGHT)
     chart3.add("", data, type='effectScatter', effect_scale=10,
                effect_period=5)
     page.add(chart3)
 
     radius = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-    chart4 = Polar("极坐标系-堆叠柱状图示例", width=WIDTH, height=HEIGHT)
+    chart4 = Polar("极坐标系-堆叠柱状图", width=WIDTH, height=HEIGHT)
     chart4.add("A", [1, 2, 3, 4, 3, 5, 1], radius_data=radius,
                type='barRadius', is_stack=True)
     chart4.add("B", [2, 4, 6, 1, 2, 3, 1], radius_data=radius,
@@ -38,7 +38,7 @@ def polar_charts():
     page.add(chart4)
 
     radius = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-    chart5 = Polar("极坐标系-堆叠柱状图示例", width=WIDTH, height=HEIGHT)
+    chart5 = Polar("极坐标系-堆叠柱状图", width=WIDTH, height=HEIGHT)
     chart5.add("", [1, 2, 3, 4, 3, 5, 1], radius_data=radius,
                type='barAngle', is_stack=True)
     chart5.add("", [2, 4, 6, 1, 2, 3, 1], radius_data=radius,

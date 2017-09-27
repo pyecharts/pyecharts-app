@@ -11,7 +11,7 @@ def overlap_charts():
     attr = ['A', 'B', 'C', 'D', 'E', 'F']
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [38, 28, 58, 48, 78, 68]
-    bar = Bar("Line - Bar 示例", width=WIDTH, height=HEIGHT)
+    bar = Bar("Line - Bar", width=WIDTH, height=HEIGHT)
     bar.add("bar", attr, v1)
     line = Line()
     line.add("line", attr, v2)
@@ -24,7 +24,7 @@ def overlap_charts():
     v2 = [30, 30, 30, 30, 30, 30]
     v3 = [50, 50, 50, 50, 50, 50]
     v4 = [10, 10, 10, 10, 10, 10]
-    es = EffectScatter("Scatter - EffectScatter 示例", width=WIDTH, height=HEIGHT)
+    es = EffectScatter("Scatter - EffectScatter", width=WIDTH, height=HEIGHT)
     es.add("es", v1, v2)
     scatter = Scatter()
     scatter.add("scatter", v1, v3)
@@ -68,7 +68,7 @@ def overlap_charts():
           [2282.17, 2263.97, 2253.25, 2286.33],
           [2255.77, 2270.28, 2253.31, 2276.22]]
     attr = ["2017/7/{}".format(i + 1) for i in range(31)]
-    kline = Kline("Kline - Line 示例", width=WIDTH, height=HEIGHT)
+    kline = Kline("Kline - Line", width=WIDTH, height=HEIGHT)
     kline.add("日K", attr, v1)
     line_1 = Line()
     line_1.add("line-1", attr, [random.randint(2400, 2500) for _ in range(31)])

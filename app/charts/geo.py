@@ -198,50 +198,45 @@ def geo_charts():
     ]
 
     chart1 = Geo("全国主要城市空气质量", "data from pm2.5", title_color="#fff",
-                 title_pos="center", width=1200, height=600,
+                 title_pos="center", width=1100, height=600,
                  background_color='#404a59')
     attr, value = chart1.cast(data)
     chart1.add("", attr, value, visual_range=[0, 200], visual_text_color="#fff",
-               symbol_size=15, is_visualmap=True)
+               symbol_size=15, is_visualmap=True, is_legend_show=False)
     page.add(chart1)
 
     chart2= Geo("全国主要城市空气质量", "data from pm2.5", title_color="#fff",
-                title_pos="center", width=1200, height=600,
+                title_pos="center", width=1100, height=600,
                 background_color='#404a59')
     attr, value = chart2.cast(data)
     chart2.add("", attr, value, type="heatmap", is_visualmap=True,
-               visual_range=[0, 300], visual_text_color='#fff')
+               visual_range=[0, 300], visual_text_color='#fff',
+               is_legend_show=False)
     page.add(chart2)
 
-    data = [
-        ("海门", 9), ("鄂尔多斯", 12), ("招远", 12),
-        ("舟山", 12), ("齐齐哈尔", 14), ("盐城", 15)
-    ]
+    data = [("海门", 9), ("鄂尔多斯", 12), ("招远", 12),
+           ("舟山", 12), ("齐齐哈尔", 14), ("盐城", 15)]
     chart3 = Geo("全国主要城市空气质量", "data from pm2.5", title_color="#fff",
-                 title_pos="center", width=1200, height=600,
+                 title_pos="center", width=1100, height=600,
                  background_color='#404a59')
     attr, value = chart3.cast(data)
     chart3.add("", attr, value, type="effectScatter", is_random=True,
                effect_scale=5)
     page.add(chart3)
 
-    data = [
-        ('汕头市', 50), ('汕尾市', 60), ('揭阳市', 35),
-        ('阳江市', 44), ('肇庆市', 72)
-    ]
+    data = [('汕头市', 50), ('汕尾市', 60), ('揭阳市', 35),
+            ('阳江市', 44), ('肇庆市', 72)]
     chart4 = Geo("广东城市空气质量", "data from pm2.5", title_color="#fff",
-                 title_pos="center", width=1200, height=600,
+                 title_pos="center", width=1100, height=600,
                  background_color='#404a59')
     attr, value = chart4.cast(data)
     chart4.add("", attr, value, maptype='广东', type="effectScatter",
                is_random=True, effect_scale=5, is_legend_show=False)
     page.add(chart4)
 
-    data = [
-        ('澄海区', 30), ('南澳县', 40), ('龙湖区', 50), ('金平区', 60)
-    ]
+    data = [('澄海区', 30), ('南澳县', 40), ('龙湖区', 50), ('金平区', 60)]
     chart5 = Geo("汕头市地图示例", title_color="#fff", title_pos="center",
-                 width=1200, height=600, background_color='#404a59')
+                 width=1100, height=600, background_color='#404a59')
     attr, value = chart5.cast(data)
     chart5.add("", attr, value, maptype="汕头", is_visualmap=True,
                is_legend_show=False)

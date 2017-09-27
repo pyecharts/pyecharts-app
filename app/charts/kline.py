@@ -1,6 +1,7 @@
 from pyecharts import Kline, Page
 from .constants import WIDTH, HEIGHT
 
+
 def kline_charts():
     page = Page()
 
