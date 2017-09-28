@@ -19,10 +19,10 @@ def parallel_charts():
         [10, 80, 55, 80, 1.01, 75, 24],
         [11, 117, 81, 124, 1.03, 45]
     ]
-    chart1 = Parallel("平行坐标系-默认指示器", width=WIDTH, height=HEIGHT)
-    chart1.config(schema)
-    chart1.add("parallel", data, is_random=True)
-    page.add(chart1)
+    chart = Parallel("平行坐标系-默认指示器", width=WIDTH, height=HEIGHT)
+    chart.config(schema)
+    chart.add("parallel", data, is_random=True)
+    page.add(chart)
 
     c_schema = [
         {"dim": 0, "name": "data"},
@@ -52,9 +52,9 @@ def parallel_charts():
         [13, 95, 69, 130, 1.28, 74, 50, "良"],
         [14, 116, 87, 131, 1.47, 84, 40, "轻度污染"]
     ]
-    chart2 = Parallel("平行坐标系-用户自定义指示器", width=WIDTH, height=HEIGHT)
-    chart2.config(c_schema=c_schema)
-    chart2.add("parallel", data)
-    page.add(chart2)
+    chart = Parallel("平行坐标系-用户自定义指示器", width=WIDTH, height=HEIGHT)
+    chart.config(c_schema=c_schema)
+    chart.add("parallel", data)
+    page.add(chart)
 
     return page

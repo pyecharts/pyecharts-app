@@ -20,10 +20,10 @@ def grid_charts():
              mark_point=["max", "min"], mark_line=["average"])
     line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0], mark_point=["max", "min"],
              mark_line=["average"], legend_top="50%")
-    chart1 = Grid()
-    chart1.add(bar, grid_bottom="60%")
-    chart1.add(line, grid_top="60%")
-    page.add(chart1)
+    chart = Grid()
+    chart.add(bar, grid_bottom="60%")
+    chart.add(line, grid_top="60%")
+    page.add(chart)
 
     v1 = [5, 20, 36, 10, 75, 90]
     v2 = [10, 25, 8, 60, 20, 80]
@@ -32,10 +32,10 @@ def grid_charts():
     es = EffectScatter()
     es.add("动态散点图示例", [11, 11, 15, 13, 12, 13, 10], [1, -2, 2, 5, 3, 2, 0],
            effect_scale=6, legend_pos="20%")
-    chart2 = Grid()
-    chart2.add(scatter, grid_left="60%")
-    chart2.add(es, grid_right="60%")
-    page.add(chart2)
+    chart = Grid()
+    chart.add(scatter, grid_left="60%")
+    chart.add(es, grid_right="60%")
+    page.add(chart)
 
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
     v1 = [5, 20, 36, 10, 75, 90]
@@ -56,12 +56,12 @@ def grid_charts():
     es = EffectScatter("动态散点图示例", title_top="50%")
     es.add("es", [11, 11, 15, 13, 12, 13, 10], [1, -2, 2, 5, 3, 2, 0],
            effect_scale=6, legend_top="50%", legend_pos="20%")
-    chart3 = Grid()
-    chart3.add(bar, grid_bottom="60%", grid_left="60%")
-    chart3.add(line, grid_bottom="60%", grid_right="60%")
-    chart3.add(scatter, grid_top="60%", grid_left="60%")
-    chart3.add(es, grid_top="60%", grid_right="60%")
-    page.add(chart3)
+    chart = Grid()
+    chart.add(bar, grid_bottom="60%", grid_left="60%")
+    chart.add(line, grid_bottom="60%", grid_right="60%")
+    chart.add(scatter, grid_top="60%", grid_left="60%")
+    chart.add(es, grid_top="60%", grid_right="60%")
+    page.add(chart)
 
     line = Line("折线图示例", width=1200)
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
@@ -74,10 +74,10 @@ def grid_charts():
     pie = Pie("饼图示例", title_pos="55%")
     pie.add("", attr, v1, radius=[45, 65], center=[65, 50], legend_pos="80%",
             legend_orient='vertical')
-    chart4 = Grid()
-    chart4.add(line, grid_right="55%")
-    chart4.add(pie, grid_left="60%")
-    page.add(chart4)
+    chart = Grid()
+    chart.add(line, grid_right="55%")
+    chart.add(pie, grid_left="60%")
+    page.add(chart)
 
     line = Line("折线图示例", width=1200)
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
@@ -119,10 +119,10 @@ def grid_charts():
     kline = Kline("K 线图示例", title_pos="60%")
     kline.add("日K", ["2017/7/{}".format(i + 1) for i in range(31)], v1,
               legend_pos="80%")
-    chart5 = Grid()
-    chart5.add(line, grid_right="60%")
-    chart5.add(kline, grid_left="55%")
-    page.add(chart5)
+    chart = Grid()
+    chart.add(line, grid_right="60%")
+    chart.add(kline, grid_left="55%")
+    page.add(chart)
 
     data = [[i, j, random.randint(0, 50)] for i in range(24) for j in range(7)]
     heatmap = HeatMap("热力图示例", height=700)
@@ -135,10 +135,10 @@ def grid_charts():
     bar = Bar("柱状图示例", title_top="52%")
     bar.add("商家A", attr, v1, is_stack=True)
     bar.add("商家B", attr, v2, is_stack=True, legend_top="50%")
-    chart6 = Grid()
-    chart6.add(heatmap, grid_bottom="60%")
-    chart6.add(bar, grid_top="60%")
-    page.add(chart6)
+    chart = Grid()
+    chart.add(heatmap, grid_bottom="60%")
+    chart.add(bar, grid_top="60%")
+    page.add(chart)
 
     line = Line("折线图示例", width=1200, height=700)
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
@@ -183,10 +183,10 @@ def grid_charts():
     kline.add("日K", ["2017/7/{}".format(i + 1) for i in range(31)], v1,
               is_datazoom_show=True)
 
-    chart7 = Grid()
-    chart7.add(line, grid_top="60%")
-    chart7.add(kline, grid_bottom="60%")
-    page.add(chart7)
+    chart = Grid()
+    chart.add(line, grid_top="60%")
+    chart.add(kline, grid_bottom="60%")
+    page.add(chart)
 
     attr = ['{}天'.format(i) for i in range(1, 31)]
     line_top = Line("折线图示例", width=1200, height=700)
@@ -196,10 +196,10 @@ def grid_charts():
     line_bottom.add("最低气温", attr, [random.randint(20, 100) for i in range(30)],
                     mark_point=["max", "min"], mark_line=["average"],
                     is_yaxis_inverse=True, xaxis_pos='top')
-    chart8 = Grid()
-    chart8.add(line_top, grid_bottom='60%')
-    chart8.add(line_bottom, grid_top='50%')
-    page.add(chart8)
+    chart = Grid()
+    chart.add(line_top, grid_bottom='60%')
+    chart.add(line_bottom, grid_top='50%')
+    page.add(chart)
 
     # attr = ["{}月".format(i) for i in range(1, 13)]
     # v1 = [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
@@ -214,8 +214,8 @@ def grid_charts():
     # overlap = Overlap()
     # overlap.add(bar)
     # overlap.add(line, is_add_yaxis=True, yaxis_index=1)
-    # chart9 = Grid()
-    # chart9.add(overlap, grid_right='20%')
-    # page.add(chart9)
+    # chart = Grid()
+    # chart.add(overlap, grid_right='20%')
+    # page.add(chart)
 
     return page

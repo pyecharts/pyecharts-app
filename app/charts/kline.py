@@ -37,19 +37,19 @@ def kline_charts():
           [2282.17, 2263.97, 2253.25, 2286.33],
           [2255.77, 2270.28, 2253.31, 2276.22]]
 
-    chart1 = Kline("K 线图示例", width=WIDTH, height=HEIGHT)
-    chart1.add("日K", ["2017/7/{}".format(i + 1) for i in range(31)], v1)
-    page.add(chart1)
+    chart = Kline("K 线图示例", width=WIDTH, height=HEIGHT)
+    chart.add("日K", ["2017/7/{}".format(i + 1) for i in range(31)], v1)
+    page.add(chart)
 
-    chart2 = Kline("K 线图示例", width=WIDTH, height=HEIGHT)
-    chart2.add("日K", ["2017/7/{}".format(i + 1) for i in range(31)], v1,
-               mark_point=["max"], is_datazoom_show=True)
-    page.add(chart2)
+    chart = Kline("K 线图示例", width=WIDTH, height=HEIGHT)
+    chart.add("日K", ["2017/7/{}".format(i + 1) for i in range(31)], v1,
+              mark_point=["max"], is_datazoom_show=True)
+    page.add(chart)
 
-    chart3 = Kline("K 线图示例", width=WIDTH, height=HEIGHT)
-    chart3.add("日K", ["2017/7/{}".format(i + 1) for i in range(31)],
-               v1, mark_point=["max"], is_datazoom_show=True,
-               datazoom_orient='vertical')
-    page.add(chart3)
+    chart = Kline("K 线图示例", width=WIDTH, height=HEIGHT)
+    chart.add("日K", ["2017/7/{}".format(i + 1) for i in range(31)],
+              v1, mark_point=["max"], is_datazoom_show=True,
+              datazoom_orient='vertical')
+    page.add(chart)
 
     return page

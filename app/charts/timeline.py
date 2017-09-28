@@ -38,13 +38,13 @@ def timeline_charts():
     bar_5.add("秋季", attr, [randint(10, 100) for _ in range(6)])
     bar_5.add("冬季", attr, [randint(10, 100) for _ in range(6)],
               is_legend_show=True)
-    chart1 = Timeline(is_auto_play=True, timeline_bottom=0)
-    chart1.add(bar_1, '2012 年')
-    chart1.add(bar_2, '2013 年')
-    chart1.add(bar_3, '2014 年')
-    chart1.add(bar_4, '2015 年')
-    chart1.add(bar_5, '2016 年')
-    page.add(chart1)
+    chart = Timeline(is_auto_play=True, timeline_bottom=0)
+    chart.add(bar_1, '2012 年')
+    chart.add(bar_2, '2013 年')
+    chart.add(bar_3, '2014 年')
+    chart.add(bar_4, '2015 年')
+    chart.add(bar_5, '2016 年')
+    page.add(chart)
 
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
     pie_1 = Pie("2012 年销量比例", "数据纯属虚构")
@@ -67,13 +67,13 @@ def timeline_charts():
     pie_5.add("秋季", attr, [randint(10, 100) for _ in range(6)],
               is_label_show=True, radius=[30, 55], rosetype='radius')
 
-    chart2 = Timeline(is_auto_play=True, timeline_bottom=0)
-    chart2.add(pie_1, '2012 年')
-    chart2.add(pie_2, '2013 年')
-    chart2.add(pie_3, '2014 年')
-    chart2.add(pie_4, '2015 年')
-    chart2.add(pie_5, '2016 年')
-    page.add(chart2)
+    chart = Timeline(is_auto_play=True, timeline_bottom=0)
+    chart.add(pie_1, '2012 年')
+    chart.add(pie_2, '2013 年')
+    chart.add(pie_3, '2014 年')
+    chart.add(pie_4, '2015 年')
+    chart.add(pie_5, '2016 年')
+    page.add(chart)
 
     attr = ["{}月".format(i) for i in range(1, 7)]
     bar = Bar("1 月份数据", "数据纯属虚构")
@@ -116,12 +116,12 @@ def timeline_charts():
     overlap_4.add(bar_4)
     overlap_4.add(line_4)
 
-    chart3 = Timeline(timeline_bottom=0)
-    chart3.add(overlap_0.chart, '1 月')
-    chart3.add(overlap_1.chart, '2 月')
-    chart3.add(overlap_2.chart, '3 月')
-    chart3.add(overlap_3.chart, '4 月')
-    chart3.add(overlap_4.chart, '5 月')
-    page.add(chart3)
+    chart = Timeline(timeline_bottom=0)
+    chart.add(overlap_0.chart, '1 月')
+    chart.add(overlap_1.chart, '2 月')
+    chart.add(overlap_2.chart, '3 月')
+    chart.add(overlap_3.chart, '4 月')
+    chart.add(overlap_4.chart, '5 月')
+    page.add(chart)
 
     return page

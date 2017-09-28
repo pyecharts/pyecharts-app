@@ -8,29 +8,29 @@ def scatter_charts():
 
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [10, 20, 30, 40, 50, 60]
-    chart1 = Scatter("散点图-双数值轴")
-    chart1.add("A", v1, v2)
-    chart1.add("B", v1[::-1], v2)
-    page.add(chart1)
+    chart = Scatter("散点图-双数值轴")
+    chart.add("A", v1, v2)
+    chart.add("B", v1[::-1], v2)
+    page.add(chart)
 
-    chart2 = Scatter("散点图-x轴类目轴")
-    chart2.add("A", ["a", "b", "c", "d", "e", "f"], v2)
-    chart2.add("B", ["a", "b", "c", "d", "e", "f"], v1[::-1],
-               xaxis_type="category")
-    page.add(chart2)
+    chart = Scatter("散点图-x轴类目轴")
+    chart.add("A", ["a", "b", "c", "d", "e", "f"], v2)
+    chart.add("B", ["a", "b", "c", "d", "e", "f"], v1[::-1],
+              xaxis_type="category")
+    page.add(chart)
 
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [10, 20, 30, 40, 50, 60]
-    chart3 = Scatter("散点图-VisualMap")
-    chart3.add("A", v1, v2)
-    chart3.add("B", v1[::-1], v2, is_visualmap=True)
-    page.add(chart3)
+    chart = Scatter("散点图-VisualMap")
+    chart.add("A", v1, v2)
+    chart.add("B", v1[::-1], v2, is_visualmap=True)
+    page.add(chart)
 
-    chart4 = Scatter("散点图-VisualMap")
-    chart4.add("A", v1, v2)
-    chart4.add("B", v1[::-1], v2, is_visualmap=True, visual_type='size',
-               visual_range_size=[20, 80])
-    page.add(chart4)
+    chart = Scatter("散点图-VisualMap")
+    chart.add("A", v1, v2)
+    chart.add("B", v1[::-1], v2, is_visualmap=True, visual_type='size',
+              visual_range_size=[20, 80])
+    page.add(chart)
 
     data = [
         [28604, 77, 17096869],
@@ -57,31 +57,31 @@ def scatter_charts():
     x_lst = [v[0] for v in data]
     y_lst = [v[1] for v in data]
     extra_data = [v[2] for v in data]
-    chart4_0 = Scatter("散点图-加入第三维度数据")
-    chart4_0.add("scatter", x_lst, y_lst, extra_data=extra_data, is_visualmap=True,
-                 visual_dimension=2, visual_orient='horizontal',
-                 visual_type='size', visual_range=[254830, 1154605773],
-                 visual_text_color='#000')
-    page.add(chart4_0)
+    chart = Scatter("散点图-加入第三维度数据")
+    chart.add("scatter", x_lst, y_lst, extra_data=extra_data, is_visualmap=True,
+              visual_dimension=2, visual_orient='horizontal',
+              visual_type='size', visual_range=[254830, 1154605773],
+              visual_text_color='#000')
+    page.add(chart)
 
-    chart5 = Scatter("散点图-画pyecharts")
-    v1, v2 = chart5.draw(os.path.join(".", "data", "pyecharts.png"))
-    chart5.add("pyecharts", v1, v2, is_random=True)
-    page.add(chart5)
+    chart = Scatter("散点图-画pyecharts")
+    v1, v2 = chart.draw(os.path.join(".", "data", "pyecharts.png"))
+    chart.add("pyecharts", v1, v2, is_random=True)
+    page.add(chart)
 
-    chart6 = Scatter("散点图-画爱心", width=800, height=480)
-    v1, v2 = chart6.draw(os.path.join(".", "data", "love.png"))
-    chart6.add("Love", v1, v2)
-    page.add(chart6)
+    chart = Scatter("散点图-画爱心", width=800, height=480)
+    v1, v2 = chart.draw(os.path.join(".", "data", "love.png"))
+    chart.add("Love", v1, v2)
+    page.add(chart)
 
-    chart7 = Scatter("散点图-画火辣Bra", width=1000, height=480)
-    v1, v2 = chart7.draw(os.path.join(".", "data", "cup.png"))
-    chart7.add("Cup", v1, v2)
-    page.add(chart7)
+    chart = Scatter("散点图-画火辣Bra", width=1000, height=480)
+    v1, v2 = chart.draw(os.path.join(".", "data", "cup.png"))
+    chart.add("Cup", v1, v2)
+    page.add(chart)
 
-    chart8 = Scatter("散点图-画性感Bra", width=1000, height=480)
-    v1, v2 = chart8.draw(os.path.join(".", "data", "cup.png"))
-    chart8.add("Cup", v1, v2, label_color=["#000"])
-    page.add(chart8)
+    chart = Scatter("散点图-画性感Bra", width=1000, height=480)
+    v1, v2 = chart.draw(os.path.join(".", "data", "cup.png"))
+    chart.add("Cup", v1, v2, label_color=["#000"])
+    page.add(chart)
 
     return page

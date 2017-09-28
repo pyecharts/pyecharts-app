@@ -10,12 +10,12 @@ def radar_charts():
     ]
     v1 = [[4300, 10000, 28000, 35000, 50000, 19000]]
     v2 = [[5000, 14000, 28000, 31000, 42000, 21000]]
-    chart1 = Radar("雷达图-默认指示器")
-    chart1.config(schema)
-    chart1.add("预算分配", v1, is_splitline=True, is_axisline_show=True)
-    chart1.add("实际开销", v2, label_color=["#4e79a7"], is_area_show=False,
-               legend_selectedmode='single')
-    page.add(chart1)
+    chart = Radar("雷达图-默认指示器")
+    chart.config(schema)
+    chart.add("预算分配", v1, is_splitline=True, is_axisline_show=True)
+    chart.add("实际开销", v2, label_color=["#4e79a7"], is_area_show=False,
+              legend_selectedmode='single')
+    page.add(chart)
 
     value_bj = [
         [55, 9, 56, 0.46, 18, 6, 1],
@@ -91,17 +91,17 @@ def radar_charts():
         {"name": "NO2", "max": 200},
         {"name": "SO2", "max": 100}
     ]
-    chart2 = Radar("雷达图-用户自定义指示器")
-    chart2.config(c_schema=c_schema, shape='circle')
-    chart2.add("北京", value_bj, item_color="#f9713c", symbol=None)
-    chart2.add("上海", value_sh, item_color="#b3e4a1", symbol=None,
-               legend_selectedmode='single')
-    page.add(chart2)
+    chart = Radar("雷达图-用户自定义指示器")
+    chart.config(c_schema=c_schema, shape='circle')
+    chart.add("北京", value_bj, item_color="#f9713c", symbol=None)
+    chart.add("上海", value_sh, item_color="#b3e4a1", symbol=None,
+              legend_selectedmode='single')
+    page.add(chart)
 
-    chart3 = Radar("雷达图-用户自定义指示器")
-    chart3.config(c_schema=c_schema, shape='circle')
-    chart3.add("北京", value_bj, item_color="#f9713c", symbol=None)
-    chart3.add("上海", value_sh, item_color="#b3e4a1", symbol=None)
-    page.add(chart3)
+    chart = Radar("雷达图-用户自定义指示器")
+    chart.config(c_schema=c_schema, shape='circle')
+    chart.add("北京", value_bj, item_color="#f9713c", symbol=None)
+    chart.add("上海", value_sh, item_color="#b3e4a1", symbol=None)
+    page.add(chart)
 
     return page

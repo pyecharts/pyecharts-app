@@ -15,10 +15,10 @@ def overlap_charts():
     bar.add("bar", attr, v1)
     line = Line()
     line.add("line", attr, v2)
-    chart1 = Overlap()
-    chart1.add(bar)
-    chart1.add(line)
-    page.add(chart1)
+    chart = Overlap()
+    chart.add(bar)
+    chart.add(line)
+    page.add(chart)
 
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [30, 30, 30, 30, 30, 30]
@@ -30,11 +30,11 @@ def overlap_charts():
     scatter.add("scatter", v1, v3)
     es_1 = EffectScatter()
     es_1.add("es_1", v1, v4, symbol='pin', effect_scale=5)
-    chart2 = Overlap()
-    chart2.add(es)
-    chart2.add(scatter)
-    chart2.add(es_1)
-    page.add(chart2)
+    chart = Overlap()
+    chart.add(es)
+    chart.add(scatter)
+    chart.add(es_1)
+    page.add(chart)
 
     v1 = [[2320.26, 2320.26, 2287.3, 2362.94],
           [2300, 2291.3, 2288.26, 2308.38],
@@ -74,11 +74,11 @@ def overlap_charts():
     line_1.add("line-1", attr, [random.randint(2400, 2500) for _ in range(31)])
     line_2 = Line()
     line_2.add("line-2", attr, [random.randint(2400, 2500) for _ in range(31)])
-    chart3 = Overlap()
-    chart3.add(kline)
-    chart3.add(line_1)
-    chart3.add(line_2)
-    page.add(chart3)
+    chart = Overlap()
+    chart.add(kline)
+    chart.add(line_1)
+    chart.add(line_2)
+    page.add(chart)
 
     attr = ["{}月".format(i) for i in range(1, 13)]
     v1 = [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
@@ -89,9 +89,9 @@ def overlap_charts():
     bar.add("降水量", attr, v2, yaxis_formatter=" ml", yaxis_max=250)
     line = Line()
     line.add("平均温度", attr, v3, yaxis_formatter=" °C")
-    chart4 = Overlap()
-    chart4.add(bar)
-    chart4.add(line, yaxis_index=1, is_add_yaxis=True)
-    page.add(chart4)
+    chart = Overlap()
+    chart.add(bar)
+    chart.add(line, yaxis_index=1, is_add_yaxis=True)
+    page.add(chart)
 
     return page

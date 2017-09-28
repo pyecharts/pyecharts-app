@@ -36,29 +36,29 @@ def bar3d_charts():
         [6, 18, 0], [6, 19, 0], [6, 20, 1], [6, 21, 2], [6, 22, 2], [6, 23, 6]
     ]
 
-    chart1 = Bar3D("3D 柱状图-默认", width=WIDTH, height=HEIGHT)
-    chart1.add("", X_TIME, Y_WEEK, [[d[1], d[0], d[2]] for d in data],
-               is_visualmap=True, visual_range=[0, 20], visual_range_color=RANGE_COLOR,
-               grid3d_width=200, grid3d_depth=80)
-    page.add(chart1)
+    chart = Bar3D("3D 柱状图-默认", width=WIDTH, height=HEIGHT)
+    chart.add("", X_TIME, Y_WEEK, [[d[1], d[0], d[2]] for d in data],
+              is_visualmap=True, visual_range=[0, 20], visual_range_color=RANGE_COLOR,
+              grid3d_width=200, grid3d_depth=80)
+    page.add(chart)
 
-    chart2 = Bar3D("3D 柱状图-立体感", width=WIDTH, height=HEIGHT)
-    chart2.add("", X_TIME, Y_WEEK, [[d[1], d[0], d[2]] for d in data],
-               is_visualmap=True, visual_range=[0, 20], visual_range_color=RANGE_COLOR,
-               grid3d_width=200, grid3d_depth=80, grid3d_shading='lambert')
-    page.add(chart2)
+    chart = Bar3D("3D 柱状图-立体感", width=WIDTH, height=HEIGHT)
+    chart.add("", X_TIME, Y_WEEK, [[d[1], d[0], d[2]] for d in data],
+              is_visualmap=True, visual_range=[0, 20], visual_range_color=RANGE_COLOR,
+              grid3d_width=200, grid3d_depth=80, grid3d_shading='lambert')
+    page.add(chart)
 
-    chart3 = Bar3D("3D 柱状图-自动旋转", width=WIDTH, height=HEIGHT)
-    chart3.add("", X_TIME, Y_WEEK, [[d[1], d[0], d[2]] for d in data],
-               is_visualmap=True, visual_range=[0, 20], visual_range_color=RANGE_COLOR,
-               grid3d_width=200, grid3d_depth=80, is_grid3d_rotate=True)
-    page.add(chart3)
+    chart = Bar3D("3D 柱状图-自动旋转", width=WIDTH, height=HEIGHT)
+    chart.add("", X_TIME, Y_WEEK, [[d[1], d[0], d[2]] for d in data],
+              is_visualmap=True, visual_range=[0, 20], visual_range_color=RANGE_COLOR,
+              grid3d_width=200, grid3d_depth=80, is_grid3d_rotate=True)
+    page.add(chart)
 
-    chart4= Bar3D("3D 柱状图-加速旋转", width=WIDTH, height=HEIGHT)
-    chart4.add("", X_TIME, Y_WEEK, [[d[1], d[0], d[2]] for d in data],
-               is_visualmap=True, visual_range=[0, 20], visual_range_color=RANGE_COLOR,
-               grid3d_width=200, grid3d_depth=80, is_grid3d_rotate=True,
-               grid3d_rotate_speed=180)
-    page.add(chart4)
+    chart= Bar3D("3D 柱状图-加速旋转", width=WIDTH, height=HEIGHT)
+    chart.add("", X_TIME, Y_WEEK, [[d[1], d[0], d[2]] for d in data],
+              is_visualmap=True, visual_range=[0, 20], visual_range_color=RANGE_COLOR,
+              grid3d_width=200, grid3d_depth=80, is_grid3d_rotate=True,
+              grid3d_rotate_speed=180)
+    page.add(chart)
 
     return page
