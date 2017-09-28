@@ -12,7 +12,7 @@ def map_charts():
 
     value = [155, 10, 66, 78, 33, 80, 190, 53, 49.6]
     attr = ["福建", "山东", "北京", "上海", "甘肃", "新疆", "河南", "广西", "西藏"]
-    chart = Map("地图-VisualMap", width=1200, height=600)
+    chart = Map("全国地图-视觉通道", width=1200, height=600)
     chart.add("", attr, value, maptype='china', is_visualmap=True,
               visual_text_color='#000')
     page.add(chart)
@@ -30,12 +30,6 @@ def map_charts():
     chart = Map("世界地图", width=1200, height=600)
     chart.add("", attr, value, maptype="world", is_visualmap=True,
               visual_text_color='#000')
-    page.add(chart)
-
-    value = [155, 10, 66, 78]
-    attr = ["福建", "山东", "北京", "上海"]
-    chart = Map("全国地图", width=1200, height=600)
-    chart.add("", attr, value, maptype='china')
     page.add(chart)
 
     return page

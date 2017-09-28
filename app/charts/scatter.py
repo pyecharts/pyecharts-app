@@ -56,7 +56,7 @@ def scatter_charts():
     x_lst = [v[0] for v in data]
     y_lst = [v[1] for v in data]
     extra_data = [v[2] for v in data]
-    chart = Scatter("散点图-加入第三维度数据", height=HEIGHT, width=WIDTH)
+    chart = Scatter("散点图-视觉通道(第三维度数据)", height=HEIGHT, width=WIDTH)
     chart.add("scatter", x_lst, y_lst, extra_data=extra_data, is_visualmap=True,
               visual_dimension=2, visual_orient='horizontal',
               visual_type='size', visual_range=[254830, 1154605773],
