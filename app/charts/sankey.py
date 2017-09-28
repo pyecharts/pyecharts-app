@@ -25,7 +25,7 @@ def sankey_charts():
               label_pos='right')
     page.add(chart)
 
-    with open(os.path.join(".", "data", "energy.json"), "r", encoding="utf-8") as f:
+    with open(os.path.join(".", "static", "json", "energy.json"), "r", encoding="utf-8") as f:
         j = json.load(f)
     chart = Sankey("桑基图-自定义", width=WIDTH, height=HEIGHT)
     chart.add("sankey", nodes=j['nodes'], links=j['links'], line_opacity=0.2,

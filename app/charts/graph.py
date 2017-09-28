@@ -28,7 +28,7 @@ def graph_charts():
               graph_layout='circular', label_text_color=None)
     page.add(chart)
 
-    with open(os.path.join(".", "data", "weibo.json"), "r", encoding="utf-8") as f:
+    with open(os.path.join(".", "static", "json", "weibo.json"), "r", encoding="utf-8") as f:
         j = json.load(f)
 
     nodes, links, categories, cont, mid, _ = j

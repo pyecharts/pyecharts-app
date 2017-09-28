@@ -65,22 +65,22 @@ def scatter_charts():
     page.add(chart)
 
     chart = Scatter("散点图-画pyecharts")
-    v1, v2 = chart.draw(os.path.join(".", "data", "pyecharts.png"))
+    v1, v2 = chart.draw(os.path.join(".", "static", "images", "pyecharts.png"))
     chart.add("pyecharts", v1, v2, is_random=True)
     page.add(chart)
 
     chart = Scatter("散点图-画爱心", width=800, height=480)
-    v1, v2 = chart.draw(os.path.join(".", "data", "love.png"))
+    v1, v2 = chart.draw(os.path.join(".", "static", "images", "love.png"))
     chart.add("Love", v1, v2)
     page.add(chart)
 
     chart = Scatter("散点图-画火辣Bra", width=1000, height=480)
-    v1, v2 = chart.draw(os.path.join(".", "data", "cup.png"))
+    v1, v2 = chart.draw(os.path.join(".", "static", "images", "cup.png"))
     chart.add("Cup", v1, v2)
     page.add(chart)
 
     chart = Scatter("散点图-画性感Bra", width=1000, height=480)
-    v1, v2 = chart.draw(os.path.join(".", "data", "cup.png"))
+    v1, v2 = chart.draw(os.path.join(".", "static", "images", "cup.png"))
     chart.add("Cup", v1, v2, label_color=["#000"])
     page.add(chart)
 

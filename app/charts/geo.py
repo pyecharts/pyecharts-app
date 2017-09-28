@@ -202,7 +202,8 @@ def geo_charts():
                 background_color='#404a59')
     attr, value = chart.cast(data)
     chart.add("", attr, value, visual_range=[0, 200], visual_text_color="#fff",
-              symbol_size=15, is_visualmap=True, is_legend_show=False)
+              symbol_size=15, is_visualmap=True, is_legend_show=False,
+              label_formatter="{a}")
     page.add(chart)
 
     chart = Geo("全国主要城市空气质量", "data from pm2.5", title_color="#fff",
@@ -210,18 +211,8 @@ def geo_charts():
                 background_color='#404a59')
     attr, value = chart.cast(data)
     chart.add("", attr, value, type="heatmap", is_visualmap=True,
-              visual_range=[0, 300], visual_text_color='#fff',
+              visual_range=[0, 200], visual_text_color='#fff',
               is_legend_show=False)
-    page.add(chart)
-
-    data = [("海门", 9), ("鄂尔多斯", 12), ("招远", 12),
-           ("舟山", 12), ("齐齐哈尔", 14), ("盐城", 15)]
-    chart = Geo("全国主要城市空气质量", "data from pm2.5", title_color="#fff",
-                title_pos="center", width=1100, height=600,
-                background_color='#404a59')
-    attr, value = chart.cast(data)
-    chart.add("", attr, value, type="effectScatter", is_random=True,
-              effect_scale=5)
     page.add(chart)
 
     data = [('汕头市', 50), ('汕尾市', 60), ('揭阳市', 35),

@@ -4,11 +4,11 @@
 
 {% block head %}
     {{super()}}
-    <link rel="icon" href="{{ url_for('static', filename='fav.ico')}}" type="image/x-coin">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}" type="text/css">
+    <link rel="icon" href="{{ url_for('static', filename='images/fav.ico')}}" type="image/x-coin">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" type="text/css">
     <title>Proudly presented by ECharts</title>
 	{% for jsfile_name in script_list %}
-        <script src="static/echarts/{{jsfile_name}}.js"></script>
+        <script src="static/echarts/{{ jsfile_name }}.js"></script>
     {% endfor %}
 {% endblock %}
 

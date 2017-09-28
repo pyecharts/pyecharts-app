@@ -25,9 +25,8 @@ def map_charts():
     page.add(chart)
 
     value = [95.1, 23.2, 43.3, 66.4, 88.5, 0.1]
-    attr = [
-        "China", "Canada", "Brazil", "Russia", "United States", "Unknown Country"
-    ]
+    attr = ["China", "Canada", "Brazil", "Russia",
+            "United States", "Unknown Country"]
     chart = Map("世界地图", width=1200, height=600)
     chart.add("", attr, value, maptype="world", is_visualmap=True,
               visual_text_color='#000')
