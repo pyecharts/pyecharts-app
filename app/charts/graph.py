@@ -2,6 +2,7 @@ import os
 import json
 
 from pyecharts import Graph, Page
+from .constants import WEIBO
 
 
 def graph_charts():
@@ -28,10 +29,7 @@ def graph_charts():
               graph_layout='circular', label_text_color=None)
     page.add(chart)
 
-    with open(os.path.join(".", "static", "json", "weibo.json"), "r", encoding="utf-8") as f:
-        j = json.load(f)
-
-    nodes, links, categories, cont, mid, _ = j
+    nodes, links, categories, cont, mid, _ = WEIBO
     chart = Graph("关系图-微博转发", width=1200, height=600)
     chart.add("", nodes, links, categories, label_pos="right", graph_repulsion=50,
               is_legend_show=False, line_curve=0.2, label_text_color=None)

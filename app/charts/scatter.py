@@ -1,6 +1,5 @@
-import os
-
 from pyecharts import Scatter, Page
+from .constants import WIDTH, HEIGHT
 
 
 def scatter_charts():
@@ -8,12 +7,12 @@ def scatter_charts():
 
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [10, 20, 30, 40, 50, 60]
-    chart = Scatter("散点图-双数值轴")
+    chart = Scatter("散点图-双数值轴", height=HEIGHT, width=WIDTH)
     chart.add("A", v1, v2)
     chart.add("B", v1[::-1], v2)
     page.add(chart)
 
-    chart = Scatter("散点图-x轴类目轴")
+    chart = Scatter("散点图-x轴类目轴", height=HEIGHT, width=WIDTH)
     chart.add("A", ["a", "b", "c", "d", "e", "f"], v2)
     chart.add("B", ["a", "b", "c", "d", "e", "f"], v1[::-1],
               xaxis_type="category")
@@ -21,12 +20,12 @@ def scatter_charts():
 
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [10, 20, 30, 40, 50, 60]
-    chart = Scatter("散点图-VisualMap")
+    chart = Scatter("散点图-视觉通道(颜色)", height=HEIGHT, width=WIDTH)
     chart.add("A", v1, v2)
     chart.add("B", v1[::-1], v2, is_visualmap=True)
     page.add(chart)
 
-    chart = Scatter("散点图-VisualMap")
+    chart = Scatter("散点图-视觉通道(大小)", height=HEIGHT, width=WIDTH)
     chart.add("A", v1, v2)
     chart.add("B", v1[::-1], v2, is_visualmap=True, visual_type='size',
               visual_range_size=[20, 80])
@@ -57,31 +56,11 @@ def scatter_charts():
     x_lst = [v[0] for v in data]
     y_lst = [v[1] for v in data]
     extra_data = [v[2] for v in data]
-    chart = Scatter("散点图-加入第三维度数据")
+    chart = Scatter("散点图-加入第三维度数据", height=HEIGHT, width=WIDTH)
     chart.add("scatter", x_lst, y_lst, extra_data=extra_data, is_visualmap=True,
               visual_dimension=2, visual_orient='horizontal',
               visual_type='size', visual_range=[254830, 1154605773],
               visual_text_color='#000')
-    page.add(chart)
-
-    chart = Scatter("散点图-画pyecharts")
-    v1, v2 = chart.draw(os.path.join(".", "static", "images", "pyecharts.png"))
-    chart.add("pyecharts", v1, v2, is_random=True)
-    page.add(chart)
-
-    chart = Scatter("散点图-画爱心", width=800, height=480)
-    v1, v2 = chart.draw(os.path.join(".", "static", "images", "love.png"))
-    chart.add("Love", v1, v2)
-    page.add(chart)
-
-    chart = Scatter("散点图-画火辣Bra", width=1000, height=480)
-    v1, v2 = chart.draw(os.path.join(".", "static", "images", "cup.png"))
-    chart.add("Cup", v1, v2)
-    page.add(chart)
-
-    chart = Scatter("散点图-画性感Bra", width=1000, height=480)
-    v1, v2 = chart.draw(os.path.join(".", "static", "images", "cup.png"))
-    chart.add("Cup", v1, v2, label_color=["#000"])
     page.add(chart)
 
     return page

@@ -2,7 +2,7 @@ import os
 import json
 
 from pyecharts import Sankey, Page
-from .constants import HEIGHT, WIDTH
+from .constants import HEIGHT, WIDTH, ENERGY
 
 
 def sankey_charts():
@@ -25,10 +25,8 @@ def sankey_charts():
               label_pos='right')
     page.add(chart)
 
-    with open(os.path.join(".", "static", "json", "energy.json"), "r", encoding="utf-8") as f:
-        j = json.load(f)
     chart = Sankey("桑基图-自定义", width=WIDTH, height=HEIGHT)
-    chart.add("sankey", nodes=j['nodes'], links=j['links'], line_opacity=0.2,
+    chart.add("sankey", nodes=ENERGY['nodes'], links=ENERGY['links'], line_opacity=0.2,
               line_curve=0.5, line_color='source',
               is_label_show=True, label_pos='right')
     page.add(chart)
