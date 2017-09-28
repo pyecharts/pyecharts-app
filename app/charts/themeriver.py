@@ -1,4 +1,5 @@
 from pyecharts import ThemeRiver, Page
+from .constants import HEIGHT, WIDTH
 
 
 def themeriver_charts():
@@ -41,7 +42,7 @@ def themeriver_charts():
         ['2015/11/20', 26, 'DD'], ['2015/11/21', 35, 'DD'], ['2015/11/22', 40, 'DD'],
         ['2015/11/23', 32, 'DD'], ['2015/11/24', 26, 'DD'], ['2015/11/25', 22, 'DD']
     ]
-    chart = ThemeRiver("主题河流图")
+    chart = ThemeRiver("主题河流图", width=WIDTH, height=HEIGHT)
     chart.add(['DQ', 'TY', 'SS', 'QG', 'SY', 'DD'], data, is_label_show=True)
     page.add(chart)
 

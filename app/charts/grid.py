@@ -11,7 +11,7 @@ def grid_charts():
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
     v1 = [5, 20, 36, 10, 75, 90]
     v2 = [10, 25, 8, 60, 20, 80]
-    bar = Bar("柱状图示例", height=800, width=1000)
+    bar = Bar("柱状图示例", height=800, width=1100)
     bar.add("商家A", attr, v1, is_stack=True)
     bar.add("商家B", attr, v2, is_stack=True)
     line = Line("折线图示例", title_top="50%")
@@ -27,7 +27,7 @@ def grid_charts():
 
     v1 = [5, 20, 36, 10, 75, 90]
     v2 = [10, 25, 8, 60, 20, 80]
-    scatter = Scatter(width=1200)
+    scatter = Scatter(width=1100)
     scatter.add("散点图示例", v1, v2, legend_pos="70%")
     es = EffectScatter()
     es.add("动态散点图示例", [11, 11, 15, 13, 12, 13, 10], [1, -2, 2, 5, 3, 2, 0],
@@ -40,7 +40,7 @@ def grid_charts():
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
     v1 = [5, 20, 36, 10, 75, 90]
     v2 = [10, 25, 8, 60, 20, 80]
-    bar = Bar("柱状图示例", height=720, width=1200, title_pos="65%")
+    bar = Bar("柱状图示例", height=720, width=1100, title_pos="65%")
     bar.add("商家A", attr, v1, is_stack=True)
     bar.add("商家B", attr, v2, is_stack=True, legend_pos="80%")
     line = Line("折线图示例")
@@ -63,7 +63,7 @@ def grid_charts():
     chart.add(es, grid_top="60%", grid_right="60%")
     page.add(chart)
 
-    line = Line("折线图示例", width=1200)
+    line = Line("折线图示例", width=1100)
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     line.add("最高气温", attr, [11, 11, 15, 13, 12, 13, 10],
              mark_point=["max", "min"], mark_line=["average"])
@@ -79,7 +79,7 @@ def grid_charts():
     chart.add(pie, grid_left="60%")
     page.add(chart)
 
-    line = Line("折线图示例", width=1200)
+    line = Line("折线图示例", width=1100)
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     line.add("最高气温", attr, [11, 11, 15, 13, 12, 13, 10],
              mark_point=["max", "min"], mark_line=["average"])
@@ -125,7 +125,7 @@ def grid_charts():
     page.add(chart)
 
     data = [[i, j, random.randint(0, 50)] for i in range(24) for j in range(7)]
-    heatmap = HeatMap("热力图示例", height=700)
+    heatmap = HeatMap("热力图示例", width=1100, height=700)
     heatmap.add("热力图直角坐标系", X_TIME, Y_WEEK, data, is_visualmap=True,
                 visual_top="45%", visual_text_color="#000",
                 visual_orient='horizontal')
@@ -140,7 +140,7 @@ def grid_charts():
     chart.add(bar, grid_top="60%")
     page.add(chart)
 
-    line = Line("折线图示例", width=1200, height=700)
+    line = Line("折线图示例", width=1100, height=700)
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     line.add("最高气温", attr, [11, 11, 15, 13, 12, 13, 10],
              mark_point=["max", "min"], mark_line=["average"])
@@ -189,7 +189,7 @@ def grid_charts():
     page.add(chart)
 
     attr = ['{}天'.format(i) for i in range(1, 31)]
-    line_top = Line("折线图示例", width=1200, height=700)
+    line_top = Line("折线图示例", width=1100, height=700)
     line_top.add("最高气温", attr, [random.randint(20, 100) for i in range(30)],
                  mark_point=["max", "min"], mark_line=["average"], legend_pos='38%')
     line_bottom = Line()
