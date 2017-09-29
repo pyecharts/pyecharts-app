@@ -1,6 +1,6 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}pyecharts{% endblock %}
+{% block title %}pyecharts - {{ title }}{% endblock %}
 
 {% block head %}
     {{super()}}
@@ -73,6 +73,7 @@
                                 <li><a href="{{ url_for('graph') }}">关系图</a> </li>
                                 <li><a href="{{ url_for('funnel') }}">漏斗图</a> </li>
                                 <li><a href="{{ url_for('gauge') }}">仪表盘</a> </li>
+                                <li><a href="{{ url_for('radar') }}">雷达图</a> </li>
                                 <li><a href="{{ url_for('liquid') }}">水球图</a> </li>
                                 <li><a href="{{ url_for('wordcloud') }}">词云图</a> </li>
                             </ul>
@@ -97,4 +98,9 @@
     <div class="my-charts">
         {{ myechart|safe }}
     </div>
+    <footer class="container-fluid foot-wrap">
+        <p align="center" style="margin-top: 20px;color:#878B91;">
+            Copyright &copy; 2017 chenjiandongx
+        </p>
+    </footer>
 {% endblock %}
