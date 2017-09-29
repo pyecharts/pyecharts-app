@@ -1,4 +1,5 @@
 from pyecharts import Radar, Page
+from .constants import WIDTH, HEIGHT
 
 
 def radar_charts():
@@ -10,7 +11,7 @@ def radar_charts():
     ]
     v1 = [[4300, 10000, 28000, 35000, 50000, 19000]]
     v2 = [[5000, 14000, 28000, 31000, 42000, 21000]]
-    chart = Radar("雷达图-默认指示器")
+    chart = Radar("雷达图-默认指示器", width=WIDTH, height=HEIGHT)
     chart.config(schema)
     chart.add("预算分配", v1, is_splitline=True, is_axisline_show=True)
     chart.add("实际开销", v2, label_color=["#4e79a7"], is_area_show=False,
@@ -91,14 +92,14 @@ def radar_charts():
         {"name": "NO2", "max": 200},
         {"name": "SO2", "max": 100}
     ]
-    chart = Radar("雷达图-用户自定义指示器")
+    chart = Radar("雷达图-用户自定义指示器", width=WIDTH, height=HEIGHT)
     chart.config(c_schema=c_schema, shape='circle')
     chart.add("北京", value_bj, item_color="#f9713c", symbol=None)
     chart.add("上海", value_sh, item_color="#b3e4a1", symbol=None,
               legend_selectedmode='single')
     page.add(chart)
 
-    chart = Radar("雷达图-用户自定义指示器")
+    chart = Radar("雷达图-用户自定义指示器", width=WIDTH, height=HEIGHT)
     chart.config(c_schema=c_schema, shape='circle')
     chart.add("北京", value_bj, item_color="#f9713c", symbol=None)
     chart.add("上海", value_sh, item_color="#b3e4a1", symbol=None)
