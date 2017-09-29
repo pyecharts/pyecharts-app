@@ -13,14 +13,15 @@ def line_charts():
     v2 = [55, 60, 16, 20, 15, 80]
     chart = Line("折线图-默认标记", width=WIDTH, height=HEIGHT)
     chart.add("商家A", attr, v1, mark_point=["average"])
-    chart.add("商家B", attr, v2, is_smooth=True, mark_line=["max", "average"])
+    chart.add("商家B", attr, v2, is_smooth=True,
+              mark_line=["max", "average"], is_more_utils=True)
     page.add(chart)
 
     chart = Line("折线图-自定义标记", width=WIDTH, height=HEIGHT)
     chart.add("商家A", attr, v1,
               mark_point=["average", {
                   "coord": ["裤子", 10], "name": "这是我想要的第一个标记点"}])
-    chart.add("商家B", attr, v2, is_smooth=True,
+    chart.add("商家B", attr, v2, is_smooth=True, is_more_utils=True,
               mark_point=[{
                   "coord": ["袜子", 80], "name": "这是我想要的第二个标记点"}])
     page.add(chart)

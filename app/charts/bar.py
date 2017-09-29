@@ -12,12 +12,12 @@ def bar_charts():
     v2 = [10, 25, 8, 60, 20, 80]
     chart = Bar("柱状图-数据堆叠", width=WIDTH, height=HEIGHT)
     chart.add("商家A", attr, v1, is_stack=True)
-    chart.add("商家B", attr, v2, is_stack=True)
+    chart.add("商家B", attr, v2, is_stack=True, is_more_utils=True)
     page.add(chart)
 
     chart = Bar("柱状图-数据标记", width=WIDTH, height=HEIGHT)
     chart.add("商家A", attr, v1, mark_point=["average"])
-    chart.add("商家B", attr, v2, mark_line=["min", "max"])
+    chart.add("商家B", attr, v2, mark_line=["min", "max"], is_more_utils=True)
     page.add(chart)
 
     chart = Bar("柱状图-xy 轴互换", width=WIDTH, height=HEIGHT)
