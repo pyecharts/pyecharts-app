@@ -196,19 +196,22 @@ def geo_charts():
         ("武汉", 273),
         ("大庆", 279)
     ]
+    chart_init = {
+        "title_color": "#fff",
+        "title_pos": "center",
+        "width": 1100,
+        "height": 600,
+        "background_color": '#404a59'
+    }
 
-    chart = Geo("全国主要城市空气质量", "data from pm2.5", title_color="#fff",
-                title_pos="center", width=1100, height=600,
-                background_color='#404a59')
+    chart = Geo("全国主要城市空气质量", "data from pm2.5", **chart_init)
     attr, value = chart.cast(data)
     chart.add("", attr, value, visual_range=[0, 200], visual_text_color="#fff",
               symbol_size=15, is_visualmap=True, is_legend_show=False,
               label_formatter="{a}")
     page.add(chart)
 
-    chart = Geo("全国主要城市空气质量", "data from pm2.5", title_color="#fff",
-                title_pos="center", width=1100, height=600,
-                background_color='#404a59')
+    chart = Geo("全国主要城市空气质量", "data from pm2.5", **chart_init)
     attr, value = chart.cast(data)
     chart.add("", attr, value, type="heatmap", is_visualmap=True,
               visual_range=[0, 200], visual_text_color='#fff',
@@ -217,17 +220,14 @@ def geo_charts():
 
     data = [('汕头市', 50), ('汕尾市', 60), ('揭阳市', 35),
             ('阳江市', 44), ('肇庆市', 72)]
-    chart = Geo("广东地理坐标系", title_color="#fff",
-                title_pos="center", width=1100, height=600,
-                background_color='#404a59')
+    chart = Geo("广东地理坐标系", **chart_init)
     attr, value = chart.cast(data)
     chart.add("", attr, value, maptype='广东', type="effectScatter",
               is_random=True, effect_scale=5, is_legend_show=False)
     page.add(chart)
 
     data = [('澄海区', 30), ('南澳县', 40), ('龙湖区', 50), ('金平区', 60)]
-    chart = Geo("汕头地理坐标系", title_color="#fff", title_pos="center",
-                width=1100, height=600, background_color='#404a59')
+    chart = Geo("汕头地理坐标系", **chart_init)
     attr, value = chart.cast(data)
     chart.add("", attr, value, maptype="汕头", is_visualmap=True,
               is_legend_show=False)

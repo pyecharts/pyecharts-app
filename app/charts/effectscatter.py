@@ -4,14 +4,19 @@ from .constants import WIDTH, HEIGHT
 
 def effectscatter_charts():
     page = Page()
+
+    chart_init = {
+        "width": WIDTH,
+        "height": HEIGHT,
+    }
     
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [25, 20, 15, 10, 60, 33]
-    chart = EffectScatter("动态散点图-默认", width=WIDTH, height=HEIGHT)
+    chart = EffectScatter("动态散点图-默认", **chart_init)
     chart.add("effectScatter", v1, v2)
     page.add(chart)
     
-    chart = EffectScatter("动态散点图-自定义", width=WIDTH, height=HEIGHT)
+    chart = EffectScatter("动态散点图-自定义", **chart_init)
     chart.add("", [10], [10], symbol_size=20, effect_scale=3.5,
               effect_period=3, symbol="pin")
     chart.add("", [20], [20], symbol_size=12, effect_scale=4.5,

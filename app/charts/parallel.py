@@ -5,6 +5,11 @@ from .constants import WIDTH, HEIGHT
 def parallel_charts():
     page = Page()
 
+    chart_init = {
+        "width": WIDTH,
+        "height": HEIGHT,
+    }
+
     schema = ["data", "AQI", "PM2.5", "PM10", "CO", "NO2"]
     data = [
         [1, 91, 45, 125, 0.82, 34],
@@ -19,7 +24,7 @@ def parallel_charts():
         [10, 80, 55, 80, 1.01, 75, 24],
         [11, 117, 81, 124, 1.03, 45]
     ]
-    chart = Parallel("平行坐标系-默认指示器", width=WIDTH, height=HEIGHT)
+    chart = Parallel("平行坐标系-默认指示器", **chart_init)
     chart.config(schema)
     chart.add("parallel", data, is_random=True)
     page.add(chart)
@@ -52,7 +57,7 @@ def parallel_charts():
         [13, 95, 69, 130, 1.28, 74, 50, "良"],
         [14, 116, 87, 131, 1.47, 84, 40, "轻度污染"]
     ]
-    chart = Parallel("平行坐标系-用户自定义指示器", width=WIDTH, height=HEIGHT)
+    chart = Parallel("平行坐标系-用户自定义指示器", **chart_init)
     chart.config(c_schema=c_schema)
     chart.add("parallel", data)
     page.add(chart)

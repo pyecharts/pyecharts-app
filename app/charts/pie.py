@@ -7,23 +7,28 @@ from .constants import WIDTH, HEIGHT
 def pie_charts():
     page = Page()
 
+    chart_init = {
+        "width": WIDTH,
+        "height": HEIGHT,
+    }
+
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
     v1 = [11, 12, 13, 10, 10, 10]
-    chart = Pie("饼图示例", width=WIDTH, height=HEIGHT)
+    chart = Pie("饼图示例", **chart_init)
     chart.add("", attr, v1, is_label_show=True)
     page.add(chart)
 
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
     v1 = [11, 12, 13, 10, 10, 10]
-    chart = Pie("饼图-圆环图示例", title_pos='center', width=WIDTH, height=HEIGHT)
-    chart.add("", attr, v1, radius=[40, 75], label_text_color=None, is_label_show=True,
-              legend_orient='vertical', legend_pos='left')
+    chart = Pie("饼图-圆环图示例", title_pos='center', **chart_init)
+    chart.add("", attr, v1, radius=[40, 75], label_text_color=None,
+              is_label_show=True, legend_orient='vertical', legend_pos='left')
     page.add(chart)
 
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
     v1 = [11, 12, 13, 10, 10, 10]
     v2 = [19, 21, 32, 20, 20, 33]
-    chart = Pie("饼图-玫瑰图示例", title_pos='center', width=WIDTH, height=HEIGHT)
+    chart = Pie("饼图-玫瑰图示例", title_pos='center', **chart_init)
     chart.add("商品A", attr, v1, center=[25, 50], is_random=True,
               radius=[30, 75], rosetype='radius')
     chart.add("商品B", attr, v2, center=[75, 50], is_random=True,
@@ -31,7 +36,7 @@ def pie_charts():
               is_legend_show=False, is_label_show=True)
     page.add(chart)
 
-    chart = Pie("饼图示例", title_pos='center', width=WIDTH, height=HEIGHT)
+    chart = Pie("饼图示例", title_pos='center', **chart_init)
     chart.add("", ['A', 'B', 'C', 'D', 'E', 'F'], [335, 321, 234, 135, 251, 148],
               radius=[40, 55], is_label_show=True)
     chart.add("", ['H', 'I', 'J'], [335, 679, 204], radius=[0, 30],
@@ -39,9 +44,9 @@ def pie_charts():
     page.add(chart)
 
     attr = ['A', 'B', 'C', 'D', 'E', 'F']
-    chart = Pie("饼图示例", width=WIDTH, height=HEIGHT)
-    chart.add("", attr, [random.randint(0, 100) for _ in range(6)], radius=[50, 55],
-              center=[25, 50], is_random=True)
+    chart = Pie("饼图示例", **chart_init)
+    chart.add("", attr, [random.randint(0, 100) for _ in range(6)],
+              radius=[50, 55], center=[25, 50], is_random=True)
     chart.add("", attr, [random.randint(20, 100) for _ in range(6)], radius=[0, 45],
               center=[25, 50], rosetype='area')
     chart.add("", attr, [random.randint(0, 100) for _ in range(6)], radius=[50, 55],
@@ -51,7 +56,7 @@ def pie_charts():
     page.add(chart)
 
     chart = Pie('各类电影中"好片"所占的比例', "数据来着豆瓣",
-                title_pos='center', width=WIDTH, height=HEIGHT)
+                title_pos='center', **chart_init)
     chart.add("", ["剧情", ""], [25, 75], center=[10, 30], radius=[18, 24],
               label_pos='center', is_label_show=True, label_text_color=None, )
     chart.add("", ["奇幻", ""], [24, 76], center=[30, 30], radius=[18, 24],

@@ -10,8 +10,8 @@ X_TIME = ["12a", "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a",
 Y_WEEK = ["Saturday", "Friday", "Thursday", "Wednesday",
           "Tuesday", "Monday", "Sunday"]
 
-WIDTH = 1000
-HEIGHT = 500
+WIDTH = 1100
+HEIGHT = 550
 
 ENERGY = {
     "nodes": [

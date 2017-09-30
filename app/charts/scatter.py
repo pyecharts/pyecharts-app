@@ -5,14 +5,19 @@ from .constants import WIDTH, HEIGHT
 def scatter_charts():
     page = Page()
 
+    chart_init = {
+        "width": WIDTH,
+        "height": HEIGHT,
+    }
+
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [10, 20, 30, 40, 50, 60]
-    chart = Scatter("散点图-双数值轴", height=HEIGHT, width=WIDTH)
+    chart = Scatter("散点图-双数值轴", **chart_init)
     chart.add("A", v1, v2)
     chart.add("B", v1[::-1], v2)
     page.add(chart)
 
-    chart = Scatter("散点图-x轴类目轴", height=HEIGHT, width=WIDTH)
+    chart = Scatter("散点图-x轴类目轴", **chart_init)
     chart.add("A", ["a", "b", "c", "d", "e", "f"], v2)
     chart.add("B", ["a", "b", "c", "d", "e", "f"], v1[::-1],
               xaxis_type="category")
@@ -20,12 +25,12 @@ def scatter_charts():
 
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [10, 20, 30, 40, 50, 60]
-    chart = Scatter("散点图-视觉通道(颜色)", height=HEIGHT, width=WIDTH)
+    chart = Scatter("散点图-视觉通道(颜色)", **chart_init)
     chart.add("A", v1, v2)
     chart.add("B", v1[::-1], v2, is_visualmap=True)
     page.add(chart)
 
-    chart = Scatter("散点图-视觉通道(大小)", height=HEIGHT, width=WIDTH)
+    chart = Scatter("散点图-视觉通道(大小)", **chart_init)
     chart.add("A", v1, v2)
     chart.add("B", v1[::-1], v2, is_visualmap=True, visual_type='size',
               visual_range_size=[20, 80])
@@ -56,7 +61,7 @@ def scatter_charts():
     x_lst = [v[0] for v in data]
     y_lst = [v[1] for v in data]
     extra_data = [v[2] for v in data]
-    chart = Scatter("散点图-视觉通道(第三维度数据)", height=HEIGHT, width=WIDTH)
+    chart = Scatter("散点图-视觉通道(第三维度数据)", **chart_init)
     chart.add("scatter", x_lst, y_lst, extra_data=extra_data, is_visualmap=True,
               visual_dimension=2, visual_orient='horizontal',
               visual_type='size', visual_range=[254830, 1154605773],

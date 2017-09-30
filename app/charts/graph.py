@@ -8,6 +8,11 @@ from .constants import WEIBO
 def graph_charts():
     page = Page()
 
+    chart_init = {
+        "width": 1100,
+        "height": 600,
+    }
+
     nodes = [{"name": "结点1", "symbolSize": 10},
              {"name": "结点2", "symbolSize": 20},
              {"name": "结点3", "symbolSize": 30},
@@ -20,17 +25,17 @@ def graph_charts():
     for i in nodes:
         for j in nodes:
             links.append({"source": i.get('name'), "target": j.get('name')})
-    chart = Graph("关系图-力引导布局", width=1100, height=500)
+    chart = Graph("关系图-力引导布局", **chart_init)
     chart.add("", nodes, links, graph_repulsion=8000, line_color='#aaa')
     page.add(chart)
 
-    chart = Graph("关系图-环形布局", width=1100, height=500)
+    chart = Graph("关系图-环形布局", **chart_init)
     chart.add("", nodes, links, is_label_show=True, graph_repulsion=8000,
               graph_layout='circular', label_text_color=None)
     page.add(chart)
 
     nodes, links, categories, cont, mid, _ = WEIBO
-    chart = Graph("关系图-微博转发", width=1100, height=700)
+    chart = Graph("关系图-微博转发", **chart_init)
     chart.add("", nodes, links, categories, label_pos="right", graph_repulsion=50,
               is_legend_show=False, line_curve=0.2, label_text_color=None)
     page.add(chart)

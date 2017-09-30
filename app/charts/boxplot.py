@@ -5,7 +5,12 @@ from .constants import WIDTH, HEIGHT
 def boxplot_charts():
     page = Page()
 
-    chart = Boxplot("箱形图-单图例", width=WIDTH, height=HEIGHT)
+    chart_init = {
+        "width": WIDTH,
+        "height": HEIGHT,
+    }
+
+    chart = Boxplot("箱形图-单图例", **chart_init)
     x_axis = ['expr1', 'expr2', 'expr3', 'expr4', 'expr5']
     y_axis = [
         [850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,
@@ -23,7 +28,7 @@ def boxplot_charts():
     chart.add("boxplot", x_axis, _yaxis)
     page.add(chart)
 
-    chart = Boxplot("箱形图-多图例", width=WIDTH, height=HEIGHT)
+    chart = Boxplot("箱形图-多图例", **chart_init)
     x_axis = ['expr1', 'expr2']
     y_axis1 = [
         [850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,

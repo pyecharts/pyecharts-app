@@ -47,25 +47,25 @@ def timeline_charts():
     page.add(chart)
 
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+    pie_style = {
+        "is_label_show": True,
+        "radius": [30, 55],
+        "rosetype":'radius'
+    }
     pie_1 = Pie("2012 年销量比例", "数据纯属虚构")
-    pie_1.add("秋季", attr, [randint(10, 100) for _ in range(6)],
-              is_label_show=True, radius=[30, 55], rosetype='radius')
+    pie_1.add("秋季", attr, [randint(10, 100) for _ in range(6)], **pie_style)
 
     pie_2 = Pie("2013 年销量比例", "数据纯属虚构")
-    pie_2.add("秋季", attr, [randint(10, 100) for _ in range(6)],
-              is_label_show=True, radius=[30, 55], rosetype='radius')
+    pie_2.add("秋季", attr, [randint(10, 100) for _ in range(6)], **pie_style)
 
     pie_3 = Pie("2014 年销量比例", "数据纯属虚构")
-    pie_3.add("秋季", attr, [randint(10, 100) for _ in range(6)],
-              is_label_show=True, radius=[30, 55], rosetype='radius')
+    pie_3.add("秋季", attr, [randint(10, 100) for _ in range(6)], **pie_style)
 
     pie_4 = Pie("2015 年销量比例", "数据纯属虚构")
-    pie_4.add("秋季", attr, [randint(10, 100) for _ in range(6)],
-              is_label_show=True, radius=[30, 55], rosetype='radius')
+    pie_4.add("秋季", attr, [randint(10, 100) for _ in range(6)], **pie_style)
 
     pie_5 = Pie("2016 年销量比例", "数据纯属虚构", width=WIDTH, height=HEIGHT)
-    pie_5.add("秋季", attr, [randint(10, 100) for _ in range(6)],
-              is_label_show=True, radius=[30, 55], rosetype='radius')
+    pie_5.add("秋季", attr, [randint(10, 100) for _ in range(6)], **pie_style)
 
     chart = Timeline(is_auto_play=True, timeline_bottom=0)
     chart.add(pie_1, '2012 年')
