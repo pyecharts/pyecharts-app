@@ -208,6 +208,15 @@ def themeriver():
                            script_list=_themeriver.get_js_dependencies())
 
 
+@app.route('/treemap')
+def treemap():
+    _treemap = treemap_charts()
+    return render_template('base.html',
+                           title='树图',
+                           myechart=_treemap.render_embed(),
+                           script_list=_treemap.get_js_dependencies())
+
+
 @app.route('/wordcloud')
 def wordcloud():
     _wordcloud = wordcloud_charts()

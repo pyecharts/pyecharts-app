@@ -206,9 +206,12 @@ def geo_charts():
 
     chart = Geo("全国主要城市空气质量", "data from pm2.5", **chart_init)
     attr, value = chart.cast(data)
-    chart.add("", attr, value, visual_range=[0, 200], visual_text_color="#fff",
-              symbol_size=15, is_visualmap=True, is_legend_show=False,
-              label_formatter="{a}")
+    chart.add("", attr, value, visual_range=[0, 200],
+              visual_text_color="#fff", is_legend_show=False,
+              symbol_size=15, is_visualmap=True,
+              tooltip_formatter='{b}',
+              label_emphasis_textsize=15,
+              label_emphasis_pos='right')
     page.add(chart)
 
     chart = Geo("全国主要城市空气质量", "data from pm2.5", **chart_init)
@@ -223,14 +226,22 @@ def geo_charts():
     chart = Geo("广东地理坐标系", **chart_init)
     attr, value = chart.cast(data)
     chart.add("", attr, value, maptype='广东', type="effectScatter",
-              is_random=True, effect_scale=5, is_legend_show=False)
+              is_random=True, effect_scale=5, is_legend_show=False,
+              tooltip_formatter='{b}',
+              label_emphasis_textsize=15,
+              label_emphasis_pos='right'
+              )
     page.add(chart)
 
     data = [('澄海区', 30), ('南澳县', 40), ('龙湖区', 50), ('金平区', 60)]
     chart = Geo("汕头地理坐标系", **chart_init)
     attr, value = chart.cast(data)
     chart.add("", attr, value, maptype="汕头", is_visualmap=True,
-              is_legend_show=False)
+              is_legend_show=False,
+              tooltip_formatter='{b}',
+              label_emphasis_textsize=15,
+              label_emphasis_pos='right'
+              )
     page.add(chart)
 
     return page

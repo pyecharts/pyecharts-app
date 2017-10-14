@@ -51,7 +51,7 @@ def bar_charts():
           135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
     v2 = [2.6, 5.9, 9.0, 26.4, 28.7, 70.7,
           175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
-    chart = Bar("柱状图-数据缩放(外)", **chart_init)
+    chart = Bar("柱状图-数据缩放(slider)", **chart_init)
     chart.add("蒸发量", attr, v1, mark_line=["average"],
               mark_point=["max", "min"])
     chart.add("降水量", attr, v2, mark_line=["average"],
@@ -61,14 +61,14 @@ def bar_charts():
 
     attr = ["{}天".format(i) for i in range(30)]
     v1 = [random.randint(1, 30) for _ in range(30)]
-    chart = Bar("柱状图-数据缩放(外)", **chart_init)
+    chart = Bar("柱状图-数据缩放(slider)", **chart_init)
     chart.add("", attr, v1, is_label_show=True, is_datazoom_show=True)
     page.add(chart)
 
     attr = ["{}月".format(i) for i in range(1, 13)]
     v1 = [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
     v2 = [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
-    chart = Bar("柱状图-数据缩放(内)", **chart_init)
+    chart = Bar("柱状图-数据缩放(inside)", **chart_init)
     chart.add("蒸发量", attr, v1, mark_line=["average"],
               mark_point=["max", "min"])
     chart.add("降水量", attr, v2, mark_line=["average"],
@@ -78,8 +78,15 @@ def bar_charts():
 
     attr = ["{}天".format(i) for i in range(30)]
     v1 = [random.randint(1, 30) for _ in range(30)]
-    chart = Bar("柱状图-数据缩放(内)", **chart_init)
+    chart = Bar("柱状图-数据缩放(inside)", **chart_init)
     chart.add("", attr, v1, is_datazoom_show=True, datazoom_type='inside',
+              datazoom_range=[10, 60])
+    page.add(chart)
+
+    attr = ["{}天".format(i) for i in range(30)]
+    v1 = [random.randint(1, 30) for _ in range(30)]
+    chart = Bar("柱状图-数据缩放(both)", **chart_init)
+    chart.add("", attr, v1, is_datazoom_show=True, datazoom_type='both',
               datazoom_range=[10, 60])
     page.add(chart)
 

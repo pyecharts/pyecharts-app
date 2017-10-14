@@ -1,4 +1,4 @@
 Flask==0.12.2
 Flask-Bootstrap==3.3.7.1
-pyecharts==0.2.5
+pyecharts==0.2.6
 gunicorn==19.7.1

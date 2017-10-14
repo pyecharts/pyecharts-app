@@ -22,6 +22,7 @@ from .sankey import sankey_charts
 from .scatter import scatter_charts
 from .scatter3d import scatter3d_charts
 from .themeriver import themeriver_charts
+from .treemap import treemap_charts
 from .wordcloud import wordcloud_charts
 
 
