@@ -47,12 +47,12 @@ def pie_charts():
     chart = Pie("饼图示例", **chart_init)
     chart.add("", attr, [random.randint(0, 100) for _ in range(6)],
               radius=[50, 55], center=[25, 50], is_random=True)
-    chart.add("", attr, [random.randint(20, 100) for _ in range(6)], radius=[0, 45],
-              center=[25, 50], rosetype='area')
-    chart.add("", attr, [random.randint(0, 100) for _ in range(6)], radius=[50, 55],
-              center=[65, 50], is_random=True)
-    chart.add("", attr, [random.randint(20, 100) for _ in range(6)], radius=[0, 45],
-              center=[65, 50], rosetype='radius')
+    chart.add("", attr, [random.randint(20, 100) for _ in range(6)],
+              radius=[0, 45], center=[25, 50], rosetype='area')
+    chart.add("", attr, [random.randint(0, 100) for _ in range(6)],
+              radius=[50, 55], center=[65, 50], is_random=True)
+    chart.add("", attr, [random.randint(20, 100) for _ in range(6)],
+              radius=[0, 45], center=[65, 50], rosetype='radius')
     page.add(chart)
 
     chart = Pie('各类电影中"好片"所占的比例', "数据来着豆瓣",

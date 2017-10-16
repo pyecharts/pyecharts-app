@@ -36,16 +36,16 @@ def treemap_charts():
     ]
 
     page = Page()
-    chart = TreeMap("树图 - 默认示例", width=WIDTH, height=HEIGHT)
+    chart = TreeMap("树图-默认示例", width=WIDTH, height=HEIGHT)
     chart.add("演示数据", data, is_label_show=True, label_pos='inside')
     page.add(chart)
 
-    chart = TreeMap("树图 - 下钻示例", width=WIDTH, height=HEIGHT)
+    chart = TreeMap("树图-下钻示例", width=WIDTH, height=HEIGHT)
     chart.add("演示数据", data, is_label_show=True, label_pos='inside',
               treemap_left_depth=1)
     page.add(chart)
 
-    chart = TreeMap("树图 - 官方示例", width=WIDTH, height=HEIGHT)
+    chart = TreeMap("树图-官方示例", width=WIDTH, height=HEIGHT)
     chart.add("演示数据", TREEMAP, is_label_show=True, label_pos='inside')
     page.add(chart)
 

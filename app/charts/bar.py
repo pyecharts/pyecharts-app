@@ -30,6 +30,10 @@ def bar_charts():
     chart.add("商家B", attr, v2, is_convert=True)
     page.add(chart)
 
+    chart = Bar("柱状图-直方图", **chart_init)
+    chart.add("", attr * 2, v1 + v2, bar_category_gap=0)
+    page.add(chart)
+
     attr = ["{}天".format(i) for i in range(20)]
     v1 = [random.randint(1, 20) for _ in range(20)]
     chart = Bar("柱状图-标签旋转", **chart_init)

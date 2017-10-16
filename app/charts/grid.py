@@ -20,8 +20,9 @@ def grid_charts():
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     line.add("最高气温", attr, [11, 11, 15, 13, 12, 13, 10],
              mark_point=["max", "min"], mark_line=["average"])
-    line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0], mark_point=["max", "min"],
-             mark_line=["average"], legend_top="50%")
+    line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0],
+             mark_point=["max", "min"], mark_line=["average"],
+             legend_top="50%")
     chart = Grid()
     chart.add(bar, grid_bottom="60%")
     chart.add(line, grid_top="60%")
@@ -49,8 +50,9 @@ def grid_charts():
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     line.add("最高气温", attr, [11, 11, 15, 13, 12, 13, 10],
              mark_point=["max", "min"], mark_line=["average"])
-    line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0], mark_point=["max", "min"],
-             mark_line=["average"], legend_pos="20%")
+    line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0],
+             mark_point=["max", "min"], mark_line=["average"],
+             legend_pos="20%")
     v1 = [5, 20, 36, 10, 75, 90]
     v2 = [10, 25, 8, 60, 20, 80]
     scatter = Scatter("散点图示例", title_top="50%", title_pos="65%")
@@ -69,13 +71,14 @@ def grid_charts():
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     line.add("最高气温", attr, [11, 11, 15, 13, 12, 13, 10],
              mark_point=["max", "min"], mark_line=["average"])
-    line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0], mark_point=["max", "min"],
-             mark_line=["average"], legend_pos="20%")
+    line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0],
+             mark_point=["max", "min"], mark_line=["average"],
+             legend_pos="20%")
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
     v1 = [11, 12, 13, 10, 10, 10]
     pie = Pie("饼图示例", title_pos="55%")
-    pie.add("", attr, v1, radius=[45, 65], center=[70, 50], legend_pos="85%",
-            legend_orient='vertical')
+    pie.add("", attr, v1, radius=[45, 65], center=[70, 50],
+            legend_pos="85%", legend_orient='vertical')
     chart = Grid()
     chart.add(line, grid_right="55%")
     chart.add(pie, grid_left="60%")
@@ -85,8 +88,9 @@ def grid_charts():
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     line.add("最高气温", attr, [11, 11, 15, 13, 12, 13, 10],
              mark_point=["max", "min"], mark_line=["average"])
-    line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0], mark_point=["max", "min"],
-             mark_line=["average"], legend_pos="20%")
+    line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0],
+             mark_point=["max", "min"], mark_line=["average"],
+             legend_pos="20%")
     v1 = [[2320.26, 2320.26, 2287.3, 2362.94],
           [2300, 2291.3, 2288.26, 2308.38],
           [2295.35, 2346.5, 2295.35, 2345.92],
@@ -146,8 +150,9 @@ def grid_charts():
     attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     line.add("最高气温", attr, [11, 11, 15, 13, 12, 13, 10],
              mark_point=["max", "min"], mark_line=["average"])
-    line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0], mark_point=["max", "min"],
-             legend_top="50%", mark_line=["average"], is_datazoom_show=True,
+    line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0],
+             mark_point=["max", "min"], legend_top="50%",
+             mark_line=["average"], is_datazoom_show=True,
              datazoom_xaxis_index=[0, 1])
 
     v1 = [[2320.26, 2320.26, 2287.3, 2362.94],
@@ -193,7 +198,8 @@ def grid_charts():
     attr = ['{}天'.format(i) for i in range(1, 31)]
     line_top = Line("折线图示例", width=WIDTH, height=700)
     line_top.add("最高气温", attr, [random.randint(20, 100) for i in range(30)],
-                 mark_point=["max", "min"], mark_line=["average"], legend_pos='38%')
+                 mark_point=["max", "min"], mark_line=["average"],
+                 legend_pos='38%')
     line_bottom = Line()
     line_bottom.add("最低气温", attr, [random.randint(20, 100) for i in range(30)],
                     mark_point=["max", "min"], mark_line=["average"],
@@ -216,6 +222,7 @@ def grid_charts():
     overlap = Overlap()
     overlap.add(bar)
     overlap.add(line, is_add_yaxis=True, yaxis_index=1)
+
     chart = Grid()
     chart.add(overlap, grid_right='20%')
     page.add(chart)

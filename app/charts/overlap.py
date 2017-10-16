@@ -41,6 +41,17 @@ def overlap_charts():
     chart.add(es_1)
     page.add(chart)
 
+    attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+    v1 = [5, 20, 36, 10, 10, 100]
+    line = Line("折线图-动态散点图叠加", **chart_init)
+    line.add("", attr, v1, is_random=True)
+    es = EffectScatter()
+    es.add("", attr, v1, effect_scale=8)
+    overlap = Overlap()
+    overlap.add(line)
+    overlap.add(es)
+    page.add(overlap)
+
     v1 = [[2320.26, 2320.26, 2287.3, 2362.94],
           [2300, 2291.3, 2288.26, 2308.38],
           [2295.35, 2346.5, 2295.35, 2345.92],
