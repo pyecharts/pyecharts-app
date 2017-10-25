@@ -1,8 +1,10 @@
 from pyecharts import Gauge, Page
-from .constants import HEIGHT, WIDTH
+
+WIDTH = 1100
+HEIGHT = 550
 
 
-def gauge_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

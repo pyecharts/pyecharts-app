@@ -1,10 +1,12 @@
 import random
 
 from pyecharts import Pie, Page
-from .constants import WIDTH, HEIGHT
+
+WIDTH = 1100
+HEIGHT = 550
 
 
-def pie_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

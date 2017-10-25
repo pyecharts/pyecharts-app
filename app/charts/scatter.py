@@ -1,8 +1,10 @@
 from pyecharts import Scatter, Page
-from .constants import WIDTH, HEIGHT
+
+WIDTH = 1100
+HEIGHT = 550
 
 
-def scatter_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

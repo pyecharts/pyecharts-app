@@ -1,7 +1,7 @@
 from pyecharts import Geo, Page
 
 
-def geo_charts():
+def create_charts():
     page = Page()
 
     data = [

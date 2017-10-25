@@ -1,5 +1,7 @@
 from pyecharts import ThemeRiver, Page
-from .constants import HEIGHT, WIDTH
+
+WIDTH = 1100
+HEIGHT = 550
 
 
 def themeriver_charts():

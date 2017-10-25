@@ -1,10 +1,12 @@
 from random import randint
 
 from pyecharts import Bar, Pie, Line, Overlap, Page, Timeline
-from .constants import WIDTH, HEIGHT
+
+WIDTH = 1100
+HEIGHT = 550
 
 
-def timeline_charts():
+def create_charts():
     page = Page()
 
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]

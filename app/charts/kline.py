@@ -1,8 +1,10 @@
 from pyecharts import Kline, Page
-from .constants import WIDTH, HEIGHT
+
+WIDTH = 1100
+HEIGHT = 550
 
 
-def kline_charts():
+def create_charts():
     page = Page()
 
     v1 = [[2320.26, 2320.26, 2287.3, 2362.94],

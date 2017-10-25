@@ -2,7 +2,9 @@ import random
 import math
 
 from pyecharts import Line, Page
-from .constants import WIDTH, HEIGHT
+
+WIDTH = 1100
+HEIGHT = 550
 
 
 def line_charts():
