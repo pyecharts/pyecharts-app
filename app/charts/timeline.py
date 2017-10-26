@@ -1,9 +1,7 @@
 from random import randint
 
 from pyecharts import Bar, Pie, Line, Overlap, Page, Timeline
-
-WIDTH = 1100
-HEIGHT = 550
+from app.charts.constants import WIDTH, HEIGHT
 
 
 def create_charts():

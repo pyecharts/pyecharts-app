@@ -1,10 +1,8 @@
 from pyecharts import ThemeRiver, Page
-
-WIDTH = 1100
-HEIGHT = 550
+from app.charts.constants import HEIGHT, WIDTH
 
 
-def themeriver_charts():
+def create_charts():
     page = Page()
 
     data = [

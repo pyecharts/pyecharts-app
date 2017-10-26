@@ -1,7 +1,5 @@
 from pyecharts import Sankey, Page
-
-WIDTH = 1100
-HEIGHT = 550
+from app.charts.constants import HEIGHT, WIDTH
 
 ENERGY = {
     "nodes": [

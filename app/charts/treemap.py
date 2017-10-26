@@ -1,7 +1,6 @@
 from pyecharts import TreeMap, Page
+from app.charts.constants import HEIGHT, WIDTH
 
-WIDTH = 1100
-HEIGHT = 550
 
 TREEMAP = [
     {

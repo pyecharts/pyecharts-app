@@ -2,9 +2,7 @@ import random
 
 from pyecharts import Bar, Line, Scatter, EffectScatter, Kline
 from pyecharts import Overlap, Page
-
-WIDTH = 1100
-HEIGHT = 550
+from app.charts.constants import WIDTH, HEIGHT
 
 
 def create_charts():

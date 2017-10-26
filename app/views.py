@@ -172,7 +172,7 @@ def pie():
 
 @app.route('/polar')
 def polar():
-    _polar = echarts.polar.create_charts()
+    _polar = charts.polar.create_charts()
     return render_template('base.html',
                            title='极坐标系',
                            source_file='polar',
@@ -182,7 +182,7 @@ def polar():
 
 @app.route('/radar')
 def radar():
-    _radar = echarts.radar.create_charts()
+    _radar = charts.radar.create_charts()
     return render_template('base.html',
                            title='雷达图',
                            source_file='radar',
@@ -192,7 +192,7 @@ def radar():
 
 @app.route('/sankey')
 def sankey():
-    _sankey = echarts.sankey.create_charts()
+    _sankey = charts.sankey.create_charts()
     return render_template('base.html',
                            title='桑基图',
                            source_file='sankey',

@@ -2,13 +2,7 @@ import random
 
 from pyecharts import Bar, Line, Scatter, EffectScatter, Pie, Kline, HeatMap
 from pyecharts import Grid, Page, Overlap
-
-X_TIME = ["12a", "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a",
-          "9a", "10a", "11a", "12p", "1p", "2p", "3p", "4p", "5p",
-          "6p", "7p", "8p", "9p", "10p", "11p"]
-
-Y_WEEK = ["Saturday", "Friday", "Thursday", "Wednesday",
-          "Tuesday", "Monday", "Sunday"]
+from app.charts.constants import X_TIME, Y_WEEK
 
 WIDTH = 1100
 

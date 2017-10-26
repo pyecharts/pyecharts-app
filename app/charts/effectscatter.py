@@ -1,10 +1,8 @@
 from pyecharts import EffectScatter, Page
-
-WIDTH = 1100
-HEIGHT = 550
+from app.charts.constants import WIDTH, HEIGHT
 
 
-def effectscatter_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

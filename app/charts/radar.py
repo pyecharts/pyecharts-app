@@ -1,7 +1,5 @@
 from pyecharts import Radar, Page
-
-WIDTH = 1100
-HEIGHT = 550
+from app.charts.constants import WIDTH, HEIGHT
 
 
 def create_charts():
