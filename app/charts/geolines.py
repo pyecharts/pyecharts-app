@@ -45,7 +45,7 @@ def create_charts():
     ]
 
     charts = GeoLines("GeoLines-默认示例", **style.init_style)
-    charts.add("从广州出发", data_guangzhou)
+    charts.add("从广州出发", data_guangzhou, is_legend_show=False)
     page.add(charts)
 
     charts = GeoLines("GeoLines-稍加配置", **style.init_style)

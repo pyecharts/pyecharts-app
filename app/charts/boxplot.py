@@ -1,16 +1,15 @@
-from pyecharts import Boxplot, Page
+from pyecharts import Boxplot, Page, Style
 from app.charts.constants import WIDTH, HEIGHT
 
 
 def create_charts():
     page = Page()
 
-    chart_init = {
-        "width": WIDTH,
-        "height": HEIGHT,
-    }
+    style = Style(
+        width=WIDTH, height=HEIGHT
+    )
 
-    chart = Boxplot("箱形图-单图例", **chart_init)
+    chart = Boxplot("箱形图-单图例", **style.init_style)
     x_axis = ['expr1', 'expr2', 'expr3', 'expr4', 'expr5']
     y_axis = [
         [850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,
@@ -28,7 +27,7 @@ def create_charts():
     chart.add("boxplot", x_axis, _yaxis)
     page.add(chart)
 
-    chart = Boxplot("箱形图-多图例", **chart_init)
+    chart = Boxplot("箱形图-多图例", **style.init_style)
     x_axis = ['expr1', 'expr2']
     y_axis1 = [
         [850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,

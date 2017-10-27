@@ -1,14 +1,13 @@
-from pyecharts import Radar, Page
+from pyecharts import Radar, Page, Style
 from app.charts.constants import WIDTH, HEIGHT
 
 
 def create_charts():
     page = Page()
 
-    chart_init = {
-        "width": WIDTH,
-        "height": HEIGHT,
-    }
+    style = Style(
+        width=WIDTH, height=HEIGHT
+    )
 
     schema = [
         ("销售", 6500), ("管理", 16000), ("信息技术", 30000),
@@ -16,7 +15,7 @@ def create_charts():
     ]
     v1 = [[4300, 10000, 28000, 35000, 50000, 19000]]
     v2 = [[5000, 14000, 28000, 31000, 42000, 21000]]
-    chart = Radar("雷达图-默认指示器", **chart_init)
+    chart = Radar("雷达图-默认指示器", **style.init_style)
     chart.config(schema)
     chart.add("预算分配", v1, is_splitline=True, is_axisline_show=True)
     chart.add("实际开销", v2, label_color=["#4e79a7"], is_area_show=False,
@@ -97,14 +96,14 @@ def create_charts():
         {"name": "NO2", "max": 200},
         {"name": "SO2", "max": 100}
     ]
-    chart = Radar("雷达图-用户自定义指示器", **chart_init)
+    chart = Radar("雷达图-用户自定义指示器", **style.init_style)
     chart.config(c_schema=c_schema, shape='circle')
     chart.add("北京", value_bj, item_color="#f9713c", symbol=None)
     chart.add("上海", value_sh, item_color="#b3e4a1", symbol=None,
               legend_selectedmode='single')
     page.add(chart)
 
-    chart = Radar("雷达图-用户自定义指示器", **chart_init)
+    chart = Radar("雷达图-用户自定义指示器", **style.init_style)
     chart.config(c_schema=c_schema, shape='circle')
     chart.add("北京", value_bj, item_color="#f9713c", symbol=None)
     chart.add("上海", value_sh, item_color="#b3e4a1", symbol=None)
