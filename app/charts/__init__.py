@@ -7,6 +7,7 @@ from . import effectscatter
 from . import funnel
 from . import gauge
 from . import geo
+from . import geolines
 from . import graph
 from . import heatmap
 from . import kline

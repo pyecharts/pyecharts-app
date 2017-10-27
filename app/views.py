@@ -80,6 +80,16 @@ def geo():
                            script_list=_geo.get_js_dependencies())
 
 
+@app.route('/geolines')
+def geolines():
+    _geolines = charts.geo.create_charts()
+    return render_template('base.html',
+                           title='地理坐标系线图',
+                           source_file='geolines',
+                           myechart=_geolines.render_embed(),
+                           script_list=_geolines.get_js_dependencies())
+
+
 @app.route('/graph')
 def graph():
     _graph = charts.graph.create_charts()
