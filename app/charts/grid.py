@@ -2,12 +2,12 @@ import random
 
 from pyecharts import Bar, Line, Scatter, EffectScatter, Pie, Kline, HeatMap
 from pyecharts import Grid, Page, Overlap
-from .constants import X_TIME, Y_WEEK
+from app.charts.constants import X_TIME, Y_WEEK
 
 WIDTH = 1100
 
 
-def grid_charts():
+def create_charts():
     page = Page()
 
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]

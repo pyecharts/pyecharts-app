@@ -1,8 +1,8 @@
 from pyecharts import Boxplot, Page
-from .constants import WIDTH, HEIGHT
+from app.charts.constants import WIDTH, HEIGHT
 
 
-def boxplot_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

@@ -1,7 +1,7 @@
 from pyecharts import Map, Page
 
 
-def map_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

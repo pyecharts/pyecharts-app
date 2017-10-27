@@ -1,8 +1,8 @@
 from pyecharts import Bar3D, Page
-from .constants import RANGE_COLOR, X_TIME, Y_WEEK, WIDTH, HEIGHT
+from app.charts.constants import RANGE_COLOR, X_TIME, Y_WEEK, WIDTH, HEIGHT
 
 
-def bar3d_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

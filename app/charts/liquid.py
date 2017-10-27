@@ -1,8 +1,8 @@
 from pyecharts import Liquid, Page
-from .constants import WIDTH, HEIGHT
+from app.charts.constants import WIDTH, HEIGHT
 
 
-def liquid_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

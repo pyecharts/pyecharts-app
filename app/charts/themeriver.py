@@ -1,8 +1,8 @@
 from pyecharts import ThemeRiver, Page
-from .constants import HEIGHT, WIDTH
+from app.charts.constants import HEIGHT, WIDTH
 
 
-def themeriver_charts():
+def create_charts():
     page = Page()
 
     data = [

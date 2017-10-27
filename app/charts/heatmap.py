@@ -1,10 +1,10 @@
 import random
 
 from pyecharts import HeatMap, Page
-from .constants import X_TIME, Y_WEEK, WIDTH, HEIGHT
+from app.charts.constants import X_TIME, Y_WEEK, WIDTH, HEIGHT
 
 
-def heatmap_charts():
+def create_charts():
     page = Page()
 
     data = [[i, j, random.randint(0, 50)] for i in range(24) for j in range(7)]

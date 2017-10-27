@@ -1,10 +1,10 @@
 import math
 
 from pyecharts import Line3D, Page
-from .constants import RANGE_COLOR, WIDTH, HEIGHT
+from app.charts.constants import RANGE_COLOR, WIDTH, HEIGHT
 
 
-def line3d_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

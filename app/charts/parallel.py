@@ -1,8 +1,8 @@
 from pyecharts import Parallel, Page
-from .constants import WIDTH, HEIGHT
+from app.charts.constants import WIDTH, HEIGHT
 
 
-def parallel_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

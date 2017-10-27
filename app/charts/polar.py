@@ -2,10 +2,10 @@ import random
 import math
 
 from pyecharts import Polar, Page
-from .constants import WIDTH, HEIGHT
+from app.charts.constants import WIDTH, HEIGHT
 
 
-def polar_charts():
+def create_charts():
     page = Page()
 
     chart_init = {

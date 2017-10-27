@@ -1,10 +1,10 @@
 import random
 
 from pyecharts import Scatter3D, Page
-from .constants import RANGE_COLOR, WIDTH, HEIGHT
+from app.charts.constants import RANGE_COLOR, WIDTH, HEIGHT
 
 
-def scatter3d_charts():
+def create_charts():
     page = Page()
 
     data = [

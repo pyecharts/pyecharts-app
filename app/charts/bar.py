@@ -1,10 +1,10 @@
 import random
 
 from pyecharts import Bar, Page
-from .constants import WIDTH, HEIGHT
+from app.charts.constants import WIDTH, HEIGHT
 
 
-def bar_charts():
+def create_charts():
     page = Page()
 
     chart_init = {
