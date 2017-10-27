@@ -82,7 +82,7 @@ def geo():
 
 @app.route('/geolines')
 def geolines():
-    _geolines = charts.geo.create_charts()
+    _geolines = charts.geolines.create_charts()
     return render_template('base.html',
                            title='地理坐标系线图',
                            source_file='geolines',
