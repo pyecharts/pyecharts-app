@@ -1,25 +1,21 @@
 import random
 
 from pyecharts import Bar, Line, Scatter, EffectScatter, Kline
-from pyecharts import Overlap, Page, Style
+from pyecharts import Overlap, Page
 from app.charts.constants import WIDTH, HEIGHT
 
 
 def create_charts():
     page = Page()
 
-    style = Style(
-        width=WIDTH, height=HEIGHT
-    )
-
     attr = ['A', 'B', 'C', 'D', 'E', 'F']
     v1 = [10, 20, 30, 40, 50, 60]
     v2 = [38, 28, 58, 48, 78, 68]
-    bar = Bar("折线图-柱状图叠加", **style.init_style)
+    bar = Bar("折线图-柱状图叠加")
     bar.add("bar", attr, v1)
     line = Line()
     line.add("line", attr, v2)
-    chart = Overlap()
+    chart = Overlap(width=WIDTH, height=HEIGHT)
     chart.add(bar)
     chart.add(line)
     page.add(chart)
@@ -28,13 +24,13 @@ def create_charts():
     v2 = [30, 30, 30, 30, 30, 30]
     v3 = [50, 50, 50, 50, 50, 50]
     v4 = [10, 10, 10, 10, 10, 10]
-    es = EffectScatter("散点图-动态散点图叠加", **style.init_style)
+    es = EffectScatter("散点图-动态散点图叠加")
     es.add("es", v1, v2)
     scatter = Scatter()
     scatter.add("scatter", v1, v3)
     es_1 = EffectScatter()
     es_1.add("es_1", v1, v4, symbol='pin', effect_scale=5)
-    chart = Overlap()
+    chart = Overlap(width=WIDTH, height=HEIGHT)
     chart.add(es)
     chart.add(scatter)
     chart.add(es_1)
@@ -42,11 +38,11 @@ def create_charts():
 
     attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
     v1 = [5, 20, 36, 10, 10, 100]
-    line = Line("折线图-动态散点图叠加", **style.init_style)
+    line = Line("折线图-动态散点图叠加")
     line.add("", attr, v1, is_random=True)
     es = EffectScatter()
     es.add("", attr, v1, effect_scale=8)
-    overlap = Overlap()
+    overlap = Overlap(width=WIDTH, height=HEIGHT)
     overlap.add(line)
     overlap.add(es)
     page.add(overlap)
@@ -83,13 +79,13 @@ def create_charts():
           [2282.17, 2263.97, 2253.25, 2286.33],
           [2255.77, 2270.28, 2253.31, 2276.22]]
     attr = ["2017/7/{}".format(i + 1) for i in range(31)]
-    kline = Kline("K 线图-折线图叠加", **style.init_style)
+    kline = Kline("K 线图-折线图叠加")
     kline.add("日K", attr, v1)
     line_1 = Line()
     line_1.add("line-1", attr, [random.randint(2400, 2500) for _ in range(31)])
     line_2 = Line()
     line_2.add("line-2", attr, [random.randint(2400, 2500) for _ in range(31)])
-    chart = Overlap()
+    chart = Overlap(width=WIDTH, height=HEIGHT)
     chart.add(kline)
     chart.add(line_1)
     chart.add(line_2)
@@ -99,12 +95,12 @@ def create_charts():
     v1 = [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
     v2 = [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
     v3 = [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
-    bar = Bar("多 Y 轴叠加", **style.init_style)
+    bar = Bar("多 Y 轴叠加")
     bar.add("蒸发量", attr, v1)
     bar.add("降水量", attr, v2, yaxis_formatter=" ml", yaxis_max=250)
     line = Line()
     line.add("平均温度", attr, v3, yaxis_formatter=" °C")
-    chart = Overlap()
+    chart = Overlap(width=WIDTH, height=HEIGHT)
     chart.add(bar)
     chart.add(line, yaxis_index=1, is_add_yaxis=True)
     page.add(chart)

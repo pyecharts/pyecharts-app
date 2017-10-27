@@ -32,13 +32,14 @@ def create_charts():
     bar_4.add("秋季", attr, [randint(10, 100) for _ in range(6)])
     bar_4.add("冬季", attr, [randint(10, 100) for _ in range(6)])
 
-    bar_5 = Bar("2016 年销量", "数据纯属虚构", width=WIDTH, height=HEIGHT)
+    bar_5 = Bar("2016 年销量", "数据纯属虚构")
     bar_5.add("春季", attr, [randint(10, 100) for _ in range(6)])
     bar_5.add("夏季", attr, [randint(10, 100) for _ in range(6)])
     bar_5.add("秋季", attr, [randint(10, 100) for _ in range(6)])
     bar_5.add("冬季", attr, [randint(10, 100) for _ in range(6)],
               is_legend_show=True)
-    chart = Timeline(is_auto_play=True, timeline_bottom=0)
+    chart = Timeline(is_auto_play=True, timeline_bottom=0,
+                     width=WIDTH, height=HEIGHT)
     chart.add(bar_1, '2012 年')
     chart.add(bar_2, '2013 年')
     chart.add(bar_3, '2014 年')
@@ -64,10 +65,11 @@ def create_charts():
     pie_4 = Pie("2015 年销量比例", "数据纯属虚构")
     pie_4.add("秋季", attr, [randint(10, 100) for _ in range(6)], **pie_style)
 
-    pie_5 = Pie("2016 年销量比例", "数据纯属虚构", width=WIDTH, height=HEIGHT)
+    pie_5 = Pie("2016 年销量比例", "数据纯属虚构",)
     pie_5.add("秋季", attr, [randint(10, 100) for _ in range(6)], **pie_style)
 
-    chart = Timeline(is_auto_play=True, timeline_bottom=0)
+    chart = Timeline(is_auto_play=True, timeline_bottom=0,
+                     width=WIDTH, height=HEIGHT)
     chart.add(pie_1, '2012 年')
     chart.add(pie_2, '2013 年')
     chart.add(pie_3, '2014 年')
@@ -108,7 +110,7 @@ def create_charts():
     overlap_3.add(bar_3)
     overlap_3.add(line_3)
 
-    bar_4 = Bar("5 月份数据", "数据纯属虚构", width=WIDTH, height=HEIGHT)
+    bar_4 = Bar("5 月份数据", "数据纯属虚构")
     bar_4.add("bar", attr, [randint(10, 50) for _ in range(6)])
     line_4 = Line()
     line_4.add("line", attr, [randint(50, 80) for _ in range(6)])
@@ -116,12 +118,13 @@ def create_charts():
     overlap_4.add(bar_4)
     overlap_4.add(line_4)
 
-    chart = Timeline(timeline_bottom=0)
-    chart.add(overlap_0.chart, '1 月')
-    chart.add(overlap_1.chart, '2 月')
-    chart.add(overlap_2.chart, '3 月')
-    chart.add(overlap_3.chart, '4 月')
-    chart.add(overlap_4.chart, '5 月')
+    chart = Timeline(timeline_bottom=0,
+                     width=WIDTH, height=HEIGHT)
+    chart.add(overlap_0, '1 月')
+    chart.add(overlap_1, '2 月')
+    chart.add(overlap_2, '3 月')
+    chart.add(overlap_3, '4 月')
+    chart.add(overlap_4, '5 月')
     page.add(chart)
 
     return page

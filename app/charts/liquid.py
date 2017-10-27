@@ -48,7 +48,7 @@ def create_charts():
              "-9.444,27.679-5.719c11.858,4.491,18.565,16.6,16.719,28.643 "
              "c4.438-3.126,8.033-7.564,10.117-13.045C389.751,449.992,"
              "382.411,433.709,367.855,428.202z")
-    charts = Liquid("水球图示例", **style.init_style)
+    charts = Liquid("水球图-自定义形状", **style.init_style)
     charts.add("Liquid", [0.6, 0.5, 0.4, 0.3],
                shape=shape, is_liquid_outline_show=False)
     page.add(charts)

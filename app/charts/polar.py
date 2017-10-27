@@ -33,24 +33,22 @@ def create_charts():
 
     radius = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     chart = Polar("极坐标系-堆叠柱状图", **style.init_style)
-    style = {
-        "type": 'barRadius',
-        "is_stack": True,
-    }
-    chart.add("A", [1, 2, 3, 4, 3, 5, 1], radius_data=radius, **style)
-    chart.add("B", [2, 4, 6, 1, 2, 3, 1], radius_data=radius, **style)
-    chart.add("C", [1, 2, 3, 4, 1, 2, 5], radius_data=radius, **style)
+    _style1 = style.add(
+        type="barRadius", is_stack=True
+    )
+    chart.add("A", [1, 2, 3, 4, 3, 5, 1], radius_data=radius, **_style1)
+    chart.add("B", [2, 4, 6, 1, 2, 3, 1], radius_data=radius, **_style1)
+    chart.add("C", [1, 2, 3, 4, 1, 2, 5], radius_data=radius, **_style1)
     page.add(chart)
 
     radius = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     chart = Polar("极坐标系-堆叠柱状图", **style.init_style)
-    style = {
-        "type": 'barAngle',
-        "is_stack": True,
-    }
-    chart.add("", [1, 2, 3, 4, 3, 5, 1], radius_data=radius, **style)
-    chart.add("", [2, 4, 6, 1, 2, 3, 1], radius_data=radius, **style)
-    chart.add("", [1, 2, 3, 4, 1, 2, 5], radius_data=radius, **style)
+    _style2 = style.add(
+        type="barAngle", is_stack=True
+    )
+    chart.add("", [1, 2, 3, 4, 3, 5, 1], radius_data=radius, **_style2)
+    chart.add("", [2, 4, 6, 1, 2, 3, 1], radius_data=radius, **_style2)
+    chart.add("", [1, 2, 3, 4, 1, 2, 5], radius_data=radius, **_style2)
     page.add(chart)
 
     data = []
