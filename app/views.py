@@ -54,7 +54,7 @@ def effectscatter():
 def funnel():
     _funnel = charts.funnel.create_charts()
     return render_template('base.html',
-                           title='仪表盘',
+                           title='漏斗图',
                            source_file='funnel',
                            myechart=_funnel.render_embed(),
                            script_list=_funnel.get_js_dependencies())
@@ -64,7 +64,7 @@ def funnel():
 def gauge():
     _gauge = charts.gauge.create_charts()
     return render_template('base.html',
-                           title='漏斗图',
+                           title='仪表盘',
                            source_file='gauge',
                            myechart=_gauge.render_embed(),
                            script_list=_gauge.get_js_dependencies())
